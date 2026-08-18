@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { QuoteModal } from './QuoteModal';
 import './Navbar.css';
@@ -22,7 +24,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <Link href="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <img src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp" alt="ITC India Logo" height="48" style={{ objectFit: 'contain' }} />
           <div className="nav-brand-text" style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
             <span className="brand-title" style={{ fontWeight: 700, fontSize: '1.1rem', lineHeight: 1.2 }}>Inspection Services</span>
@@ -31,10 +33,10 @@ export const Navbar: React.FC = () => {
         </Link>
 
         <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
-          <li><Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inspection Services</Link></li>
-          <li><Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
+          <li><Link href="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+          <li><Link href="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
+          <li><Link href="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inspection Services</Link></li>
+          <li><Link href="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
           <li>
             <button className="btn btn-primary" onClick={() => { setIsQuoteModalOpen(true); setIsMobileMenuOpen(false); }}>
               Request a Quote

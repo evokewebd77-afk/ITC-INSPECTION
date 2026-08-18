@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { servicesData, mainServiceIds } from '../data/services';
 import './Services.css';
@@ -21,7 +23,7 @@ export const Services: React.FC = () => {
         
         <div className={`services-grid reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
           {mainServices.map((service, index) => (
-            <Link to={`/services/${service.id}`} className="premium-service-card" key={index}>
+            <Link href={`/services/${service.id}`} className="premium-service-card" key={index}>
               <div className="premium-image-wrapper">
                 <img src={service.img} alt={service.title} className="premium-img" />
                 <div className="premium-overlay-gradient"></div>
@@ -44,7 +46,7 @@ export const Services: React.FC = () => {
         </div>
 
         <div className={`text-center services-footer reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ transitionDelay: '400ms', marginTop: '4rem' }}>
-          <Link to="/services" className="btn btn-outline" style={{ borderRadius: '50px', padding: '1rem 2.5rem' }}>
+          <Link href="/services" className="btn btn-outline" style={{ borderRadius: '50px', padding: '1rem 2.5rem' }}>
             View All Inspection Services
           </Link>
         </div>

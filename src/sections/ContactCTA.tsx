@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, CheckCircle, Send, Loader2 } from 'lucide-react';
 import { sendFormToGoogleSheet } from '../utils/submitForm';

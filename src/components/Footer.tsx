@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -41,29 +41,29 @@ export const Footer: React.FC = () => {
           <div className="footer-column">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Inspection Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/services">Inspection Services</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
           
           <div className="footer-column">
             <h4 className="footer-heading">Inspection Services</h4>
             <ul className="footer-links">
-              <li><Link to="/services/explosion-hazardous">Explosion & Hazardous Area Safety</Link></li>
-              <li><Link to="/services/advanced-electrical">Electrical & Electronics</Link></li>
-              <li><Link to="/services/machinery-robotics">Machinery & Robotics</Link></li>
-              <li><Link to="/services/perimeter-security">Perimeter & Security</Link></li>
-              <li><Link to="/services" style={{ color: 'var(--secondary-color)', fontWeight: 600 }}>View All Inspection Services →</Link></li>
+              <li><Link href="/services/explosion-hazardous">Explosion & Hazardous Area Safety</Link></li>
+              <li><Link href="/services/advanced-electrical">Electrical & Electronics</Link></li>
+              <li><Link href="/services/machinery-robotics">Machinery & Robotics</Link></li>
+              <li><Link href="/services/perimeter-security">Perimeter & Security</Link></li>
+              <li><Link href="/services" style={{ color: 'var(--secondary-color)', fontWeight: 600 }}>View All Inspection Services →</Link></li>
             </ul>
           </div>
           
           <div className="footer-column">
             <h4 className="footer-heading">Legal</h4>
             <ul className="footer-links">
-              <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/terms">Terms of Service</Link></li>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/terms">Terms of Service</Link></li>
             </ul>
           </div>
           

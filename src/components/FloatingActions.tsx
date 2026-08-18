@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
 import './FloatingActions.css';
@@ -13,7 +15,6 @@ export const FloatingActions: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show back to top only when scrolled down 300px
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -34,7 +35,6 @@ export const FloatingActions: React.FC = () => {
 
   return (
     <div className="floating-actions-container">
-      {/* Back to Top Button */}
       <button 
         onClick={scrollToTop} 
         className={`floating-btn back-top-btn ${isVisible ? 'visible' : 'hidden'}`}
@@ -44,7 +44,6 @@ export const FloatingActions: React.FC = () => {
         <ArrowUp size={24} />
       </button>
 
-      {/* WhatsApp Button */}
       <a 
         href="https://wa.me/919056544487" 
         target="_blank" 
@@ -56,7 +55,6 @@ export const FloatingActions: React.FC = () => {
         <WhatsAppIcon />
       </a>
 
-      {/* Email Button */}
       <a 
         href="mailto:info@itcindia.org" 
         className="floating-btn mail-btn"

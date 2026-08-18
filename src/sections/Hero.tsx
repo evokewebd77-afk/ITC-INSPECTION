@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
@@ -24,11 +26,11 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="hero-actions delay-200 animate-fade-in">
-            <Link to="/services" className="btn btn-primary">
+            <Link href="/services" className="btn btn-primary">
               Explore Services
               <ArrowRight size={20} />
             </Link>
-            <Link to="/contact" className="btn btn-outline-light">
+            <Link href="/contact" className="btn btn-outline-light">
               Request a Quote
             </Link>
           </div>

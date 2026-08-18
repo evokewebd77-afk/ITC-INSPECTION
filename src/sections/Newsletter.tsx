@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { CheckCircle, ShieldCheck, Mail } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './Newsletter.css';
