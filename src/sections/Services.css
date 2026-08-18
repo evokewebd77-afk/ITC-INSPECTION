@@ -206,6 +206,10 @@
   .mobile-view-more-container {
     display: block;
   }
+
+  .services-footer {
+    display: none !important;
+  }
 }
 
 @media (max-width: 576px) {
