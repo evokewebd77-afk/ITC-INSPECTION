@@ -6,7 +6,7 @@ import './Hero.css';
 export const Hero: React.FC = () => {
   return (
     <section id="home" className="hero-cinematic">
-      <div className="hero-bg-image"></div>
+      <div className="hero-bg-image" style={{ backgroundImage: "url('/itc.png')" }}></div>
       <div className="hero-bg-overlay"></div>
       
       <div className="container hero-container-glass">
