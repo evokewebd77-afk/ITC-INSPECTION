@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { servicesData, mainServiceIds } from '../data/services';
@@ -9,6 +9,7 @@ import './Services.css';
 
 export const Services: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();
+  const [showAllMobile, setShowAllMobile] = useState(false);
   const mainServices = servicesData.filter(s => mainServiceIds.includes(s.id));
 
   return (
@@ -22,27 +23,46 @@ export const Services: React.FC = () => {
         </div>
         
         <div className={`services-grid reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
-          {mainServices.map((service, index) => (
-            <Link href={`/services/${service.id}`} className="premium-service-card" key={index}>
-              <div className="premium-image-wrapper">
-                <img src={service.img} alt={service.title} className="premium-img" />
-                <div className="premium-overlay-gradient"></div>
-                <div className="premium-icon-glass">
-                  {service.icon}
-                </div>
-              </div>
-              <div className="premium-content">
-                <h3 className="premium-title">{service.title}</h3>
-                <p className="premium-desc">{service.desc}</p>
-                <div className="premium-action">
-                  <span>Explore Service</span>
-                  <div className="action-circle">
-                    <ArrowRight size={16} />
+          {mainServices.map((service, index) => {
+            const isHiddenOnMobile = !showAllMobile && index >= 4;
+            return (
+              <Link 
+                href={`/services/${service.id}`} 
+                className={`premium-service-card ${isHiddenOnMobile ? 'mobile-hidden' : ''}`} 
+                key={index}
+              >
+                <div className="premium-image-wrapper">
+                  <img src={service.img} alt={service.title} className="premium-img" />
+                  <div className="premium-overlay-gradient"></div>
+                  <div className="premium-icon-glass">
+                    {service.icon}
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+                <div className="premium-content">
+                  <h3 className="premium-title">{service.title}</h3>
+                  <p className="premium-desc">{service.desc}</p>
+                  <div className="premium-action">
+                    <span>Explore Service</span>
+                    <div className="action-circle">
+                      <ArrowRight size={16} />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Mobile View More Button */}
+        <div className="mobile-view-more-container text-center">
+          <button 
+            type="button"
+            onClick={() => setShowAllMobile(!showAllMobile)}
+            className="mobile-view-more-btn"
+          >
+            <span>{showAllMobile ? 'Show Less Services' : 'View More Services'}</span>
+            {showAllMobile ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
         </div>
 
         <div className={`text-center services-footer reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ transitionDelay: '400ms', marginTop: '4rem' }}>
