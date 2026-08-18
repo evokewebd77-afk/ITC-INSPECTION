@@ -40,7 +40,7 @@
 }
 
 .cta-headline {
-  font-size: 3.2rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   color: white;
   margin-bottom: 1.5rem;

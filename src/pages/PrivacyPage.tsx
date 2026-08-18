@@ -72,7 +72,7 @@ export const PrivacyPage: React.FC = () => {
           <div style={{ width: '80px', height: '80px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2rem' }}>
             <Shield size={36} />
           </div>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, marginBottom: '1rem', color: 'white' }}>Privacy Policy</h1>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, marginBottom: '1rem', color: 'white' }}>Privacy Policy</h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto' }}>
             Your privacy is important to us. This policy outlines how ITC India collects, uses, and protects your personal information.
           </p>

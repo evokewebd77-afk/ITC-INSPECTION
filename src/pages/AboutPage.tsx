@@ -75,7 +75,7 @@ export const AboutPage: React.FC = () => {
             
             <div>
               <div style={{ display: 'inline-block', padding: '0.5rem 1.5rem', background: 'rgba(5, 158, 246, 0.1)', color: 'var(--secondary-color)', borderRadius: '50px', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.85rem' }}>Our Heritage</div>
-              <h2 style={{ fontSize: '3.5rem', color: 'var(--primary-color)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>Who We Are</h2>
+              <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--primary-color)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>Who We Are</h2>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 ITC India is a leading inspection and certification division specializing in comprehensive safety audits, compliance verification, and technical assessments across multiple industrial sectors. With a team of certified professionals and state-of-the-art diagnostic tools, we ensure your facilities meet international standards and regulatory requirements.
               </p>
@@ -86,13 +86,13 @@ export const AboutPage: React.FC = () => {
           </div>
 
           {/* Our Expertise - Premium Card */}
-          <div style={{ background: '#f4f8fc', borderRadius: '40px', padding: '5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', alignItems: 'center', marginBottom: '8rem', border: '1px solid rgba(4, 55, 129, 0.05)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ background: '#f4f8fc', borderRadius: '40px', padding: 'clamp(2rem, 4vw, 5rem)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem', alignItems: 'center', marginBottom: '8rem', border: '1px solid rgba(4, 55, 129, 0.05)', position: 'relative', overflow: 'hidden' }}>
             {/* Background Decorative Element */}
             <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(5, 158, 246, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
             
             <div style={{ position: 'relative', zIndex: 1 }}>
               <div style={{ display: 'inline-block', padding: '0.5rem 1.5rem', background: 'white', color: 'var(--secondary-color)', borderRadius: '50px', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.85rem', boxShadow: '0 10px 20px rgba(0,0,0,0.05)' }}>Core Strengths</div>
-              <h2 style={{ fontSize: '3.5rem', color: 'var(--primary-color)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>Our Expertise</h2>
+              <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--primary-color)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>Our Expertise</h2>
               <p style={{ color: 'var(--text-main)', fontSize: '1.35rem', fontWeight: 600, marginBottom: '2.5rem', lineHeight: 1.5 }}>
                 Delivering insights that go beyond standard compliance checks.
               </p>
@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
       {/* CTA Section */}
       <section style={{ backgroundColor: '#e3f2fd', padding: '6rem 0', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontWeight: 800, color: 'var(--primary-color)' }}>Ready to Work With Us?</h2>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', marginBottom: '1.5rem', fontWeight: 800, color: 'var(--primary-color)' }}>Ready to Work With Us?</h2>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 3rem auto', fontWeight: 500 }}>
             Get in touch with our team to discuss your inspection needs and learn how we can help you achieve compliance and safety excellence.
           </p>

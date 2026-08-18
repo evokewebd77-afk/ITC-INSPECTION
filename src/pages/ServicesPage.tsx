@@ -136,7 +136,7 @@ export const ServicesPage: React.FC = () => {
       {/* CTA Section */}
       <section style={{ backgroundColor: '#e3f2fd', padding: '6rem 0', textAlign: 'center' }}>
         <div className="container">
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontWeight: 800, color: 'var(--primary-color)' }}>Need a Custom Inspection Solution?</h2>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', marginBottom: '1.5rem', fontWeight: 800, color: 'var(--primary-color)' }}>Need a Custom Inspection Solution?</h2>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto 3rem auto', fontWeight: 500, lineHeight: 1.6 }}>
             Our team can design a tailored inspection program to meet your specific requirements and compliance needs.
           </p>

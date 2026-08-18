@@ -78,8 +78,8 @@ export const ContactPage: React.FC = () => {
           zIndex: 1
         }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', fontWeight: 800, color: '#ffffff' }}>Ready to Inspect with Confidence?</h1>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '1.5rem', fontWeight: 800, color: '#ffffff' }}>Ready to Inspect with Confidence?</h1>
+          <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.6 }}>
             Reach out for expert consultation or to schedule an inspection. Our team is ready to help you achieve compliance and safety excellence.
           </p>
         </div>
@@ -88,7 +88,7 @@ export const ContactPage: React.FC = () => {
       {/* Content Section */}
       <section className="section" ref={ref as any}>
         <div className="container">
-          <div className={`reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '4rem', alignItems: 'start' }}>
+          <div className={`reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '3rem', alignItems: 'start' }}>
             
             {/* Contact Info (Left Column) */}
             <div>

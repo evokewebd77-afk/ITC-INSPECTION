@@ -36,7 +36,12 @@
   padding: 0;
 }
 
-html {
+html, body, #root, main, .app {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -54,6 +59,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--primary-color);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 a {
@@ -81,10 +88,12 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .section {
   padding: 5rem 0;
+  overflow: hidden;
 }
 
 .section-bg {
@@ -96,7 +105,7 @@ img {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -104,7 +113,7 @@ img {
 
 .section-subtitle {
   color: var(--text-muted);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 3vw, 1.125rem);
   max-width: 700px;
   margin: 0 auto 3rem;
 }
@@ -185,7 +194,10 @@ img {
     padding: 3rem 0;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  .container {
+    padding: 0 1rem;
   }
 }
 

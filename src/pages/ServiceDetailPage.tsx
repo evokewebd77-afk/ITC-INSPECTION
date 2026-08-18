@@ -38,14 +38,14 @@ export const ServiceDetailPage: React.FC = () => {
             <ArrowLeft size={20} /> Back to Services
           </Link>
           
-          <div style={{ background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(12px)', padding: '2.5rem', borderRadius: '24px', maxWidth: '850px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '1px solid rgba(255,255,255,0.5)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1.5rem' }}>
-              <div style={{ background: 'rgba(5, 158, 246, 0.1)', color: 'var(--secondary-color)', padding: '1rem', borderRadius: '16px' }}>
+          <div style={{ background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(12px)', padding: 'clamp(1.25rem, 3vw, 2.5rem)', borderRadius: '24px', maxWidth: '850px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '1px solid rgba(255,255,255,0.5)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+              <div style={{ background: 'rgba(5, 158, 246, 0.1)', color: 'var(--secondary-color)', padding: '1rem', borderRadius: '16px', flexShrink: 0 }}>
                 {service.icon}
               </div>
-              <h1 style={{ fontSize: '3rem', margin: 0, fontWeight: 800, color: 'var(--primary-color)' }}>{service.title}</h1>
+              <h1 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', margin: 0, fontWeight: 800, color: 'var(--primary-color)' }}>{service.title}</h1>
             </div>
-            <p style={{ fontSize: '1.25rem', color: 'var(--text-main)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+            <p style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: 'var(--text-main)', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
               {service.desc}
             </p>
           </div>
@@ -210,8 +210,8 @@ export const ServiceDetailPage: React.FC = () => {
                     </>
                   )}
 
-                  <div style={{ background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)', padding: '3.5rem 2rem', borderRadius: '20px', color: 'white', textAlign: 'center', marginTop: '4rem', boxShadow: '0 20px 40px rgba(4, 55, 129, 0.2)' }}>
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontWeight: 800, color: 'white' }}>Ready to Ensure Your Safety?</h2>
+                  <div style={{ background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)', padding: 'clamp(2rem, 4vw, 3.5rem) 1.5rem', borderRadius: '20px', color: 'white', textAlign: 'center', marginTop: '4rem', boxShadow: '0 20px 40px rgba(4, 55, 129, 0.2)' }}>
+                    <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', marginBottom: '1rem', fontWeight: 800, color: 'white' }}>Ready to Ensure Your Safety?</h2>
                     <p style={{ fontSize: '1.2rem', marginBottom: '2.5rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 2.5rem auto', color: 'white' }}>
                       Get expert consultation for your {service.title.toLowerCase()} needs
                     </p>
