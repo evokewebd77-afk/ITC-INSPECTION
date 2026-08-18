@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { QuoteModal } from './QuoteModal';
 import './Navbar.css';
@@ -8,8 +8,6 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +19,8 @@ export const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const isTransparent = isHomePage && !isScrolled;
-
   return (
-    <nav className={`navbar ${isTransparent ? 'navbar-transparent' : 'scrolled'}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <img src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp" alt="ITC India Logo" height="48" style={{ objectFit: 'contain' }} />
