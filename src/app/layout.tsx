@@ -10,12 +10,14 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
 });
 
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -33,6 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body>
         <div className="app">
           <Navbar />

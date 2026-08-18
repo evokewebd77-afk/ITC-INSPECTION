@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
-
 :root {
   --primary-color: #043781;
   --primary-light: #075ca8;
@@ -34,6 +32,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body, #root, main, .app {
