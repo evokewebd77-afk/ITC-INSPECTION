@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { QuoteModal } from './QuoteModal';
 import './Navbar.css';
@@ -8,6 +8,8 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,14 +21,16 @@ export const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
+  const isTransparent = isHomePage && !isScrolled;
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isTransparent ? 'navbar-transparent' : 'scrolled'}`}>
       <div className="container nav-container">
         <Link to="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <img src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp" alt="ITC India Logo" height="48" style={{ objectFit: 'contain' }} />
           <div className="nav-brand-text" style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-            <span style={{ fontWeight: 700, fontSize: '1.1rem', lineHeight: 1.2, color: 'var(--primary-color)' }}>Inspection Services</span>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>A Division of ITC (India) Pvt. Ltd.</span>
+            <span className="brand-title" style={{ fontWeight: 700, fontSize: '1.1rem', lineHeight: 1.2 }}>Inspection Services</span>
+            <span className="brand-subtitle" style={{ fontSize: '0.75rem' }}>A Division of ITC (India) Pvt. Ltd.</span>
           </div>
         </Link>
 

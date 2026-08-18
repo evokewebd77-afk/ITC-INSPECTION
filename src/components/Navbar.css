@@ -13,9 +13,46 @@
   box-shadow: var(--shadow-sm);
 }
 
+.navbar.navbar-transparent {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+.navbar.navbar-transparent .brand-title {
+  color: #ffffff !important;
+}
+
+.navbar.navbar-transparent .brand-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar.navbar-transparent .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar.navbar-transparent .mobile-menu-btn {
+  color: #ffffff !important;
+}
+
 .navbar.scrolled {
   height: 70px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-md);
+}
+
+.brand-title {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.brand-subtitle {
+  color: var(--text-muted);
+  transition: var(--transition);
 }
 
 .navbar .container {
