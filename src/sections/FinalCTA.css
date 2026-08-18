@@ -1,0 +1,146 @@
+.final-cta {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 10% 90%, rgba(5, 158, 246, 0.2) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content {
+  flex: 1;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  font-size: 1.125rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-benefits {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit-item svg {
+  color: var(--secondary-color);
+}
+
+.cta-contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateX(-10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.contact-details p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.contact-details span {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.contact-action {
+  margin-left: auto;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .cta-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-content p {
+    margin: 0 auto 2rem;
+  }
+  .cta-benefits {
+    justify-content: center;
+  }
+  .contact-card {
+    text-align: left;
+  }
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+}

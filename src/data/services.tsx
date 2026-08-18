@@ -1,0 +1,1994 @@
+import { 
+  Flame, Zap, Settings, Sun, 
+  ShieldAlert, Camera, Building, 
+  Map
+} from 'lucide-react';
+
+export const servicesData = [
+  { 
+    id: 'explosion-hazardous',
+    isMain: true,
+    icon: <Flame size={32} strokeWidth={1.5} />, 
+    title: 'Explosion & Hazardous Area Safety', 
+    desc: 'Protect industrial environments from explosive risks through specialized inspections and certifications.',
+    longDesc: 'Protect industrial environments from explosive risks through specialized inspections and certifications.',
+    img: '/img1.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Explosion & Hazardous Area Safety Inspection Services',
+      detailIntroDesc: 'Our specialized inspection and certification services ensure your facilities meet international safety standards for explosive and hazardous environments. We provide end-to-end solutions to protect your personnel, assets, and operations.',
+      subServices: [
+        { title: 'Explosion-proof Equipment Inspections', desc: 'Comprehensive inspections of Ex-d, Ex-e, and Ex-i equipment ensuring full IECEx/ATEX compliance. We verify proper installation, maintenance, and operational integrity of explosion-proof systems.', link: '/services/explosion-equipment-inspections' },
+        { title: 'Hazardous Area Classification Validation', desc: 'Accurate validation of hazardous area classifications (Zones 0, 1, 2) for proper equipment placement and compliance. We ensure your facility adheres to international zoning standards.', link: '/services/explosion-area-classification' },
+        { title: 'Dust Explosion Prevention Audits', desc: 'Specialized audits across silos, mills, and conveyor systems to prevent dust explosion risks. We assess material handling processes and recommend safety improvements.', link: '/services/explosion-dust-prevention' },
+        { title: 'Hydrogen Plant Explosion Safety Inspections', desc: 'Critical safety inspections for hydrogen facilities ensuring proper containment and venting compliance. Essential for renewable energy and industrial gas facilities.', link: '/services/explosion-hydrogen-plant' },
+        { title: 'BESS Fire & Explosion Risk Assessments', desc: 'Comprehensive fire and explosion risk assessments for Battery Energy Storage Systems (BESS) ensuring safe operation and compliance with international safety standards.', link: '/services/explosion-bess-assessments' }
+      ],
+      whyChooseUs: [
+        { title: 'ISO-Aligned Methodologies', desc: 'Certified inspection processes following international standards' },
+        { title: 'Fast Turnaround', desc: 'Efficient inspection processes for minimal downtime' },
+        { title: 'Expert Certification Team', desc: 'Certified professionals with extensive hazardous area expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable recommendations' }
+      ],
+      overview: 'Explosion & Hazardous Area Safety inspection services ensure your facilities meet international safety standards for explosive and hazardous environments. Our comprehensive approach covers equipment certification, area classification, and risk assessment to protect personnel, assets, and operations in potentially explosive atmospheres.',
+      keyInspectionAreas: 'IECEx, ATEX, IEC 60079 series, NFPA 70 (NEC), NFPA 497, API RP 500/505, IS/IEC standards, Factory Act compliance, Petroleum Rules, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (design drawings, certificates, maintenance records), visual inspection of explosion-proof equipment, area classification validation (Zones 0/1/2), equipment certification verification (Ex-d, Ex-e, Ex-i, Ex-p, Ex-m), installation compliance checks, grounding and bonding verification, and environmental protection assessment.',
+      keyTests: 'Insulation resistance testing, continuity and earth resistance measurements, enclosure integrity tests (IP rating verification), pressure testing for Ex-p equipment, temperature rise tests, functional testing of safety interlocks, gas detection system calibration, and emergency response system verification.',
+      qualityIssues: 'Common nonconformities include missing or incorrect certification labels, improper equipment selection for zone classification, damaged or corroded enclosures, inadequate sealing at cable entry points, missing or incorrect documentation, improper maintenance procedures, and non-compliance with area classification drawings.',
+      riskAndSafetyIssues: 'Primary risks include explosion hazards from ignition sources, fire propagation in classified areas, personnel exposure to toxic or flammable substances, equipment failure leading to catastrophic events, and non-compliance resulting in regulatory penalties. Safety controls focus on proper equipment selection, regular maintenance, training programs, and adherence to zone classifications.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, updated hazardous area classification drawings, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'advanced-electrical',
+    isMain: true,
+    icon: <Zap size={32} strokeWidth={1.5} />, 
+    title: 'Advanced Electrical & Electronics', 
+    desc: 'Comprehensive electrical safety inspections for modern and smart systems.',
+    longDesc: 'Comprehensive electrical safety inspections for modern and smart systems.',
+    img: '/ad.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Electrical & Electronics Safety Inspection Services',
+      detailIntroDesc: 'Our advanced inspection services ensure your electrical and electronic systems meet the highest safety and performance standards. We provide comprehensive audits for modern smart systems, data centers, and critical electronic infrastructure.',
+      subServices: [
+        { title: 'Smart Grid & IoT Safety Audits', desc: 'Verification of connectivity and insulation performance for smart grid systems and IoT networks. We ensure reliable and safe operation of modern electrical infrastructure.', link: '/services/electrical-smart-grid-iot' },
+        { title: 'Lithium-ion Battery Safety Inspections', desc: 'Comprehensive safety inspections for lithium-ion batteries in EV, UPS, and solar systems. We verify proper installation, thermal management, and compliance with safety standards.', link: '/services/electrical-lithium-battery' },
+        { title: 'EMC/EMI Compliance Inspections', desc: 'Electromagnetic compatibility and interference inspections for critical electronic systems ensuring proper shielding and compliance with international EMC standards.', link: '/services/electrical-emc-emi' },
+        { title: 'Data Center Infrastructure Audits', desc: 'Electrical reliability and redundancy audits for data center infrastructure. We verify power distribution, backup systems, and cooling infrastructure for optimal performance.', link: '/services/electrical-data-center' },
+        { title: 'Cybersecurity Inspections for Industrial Control Systems', desc: 'Cybersecurity audits for industrial control and SCADA systems ensuring protection against cyber threats and compliance with security standards.', link: '/services/electrical-cybersecurity' }
+      ],
+      whyChooseUs: [
+        { title: 'Expert Electrical Engineers', desc: 'Certified professionals with extensive electrical systems expertise' },
+        { title: 'Industry Standards Compliance', desc: 'Inspection processes following IEC, IEEE, and local regulatory standards' },
+        { title: 'Advanced Testing Equipment', desc: 'State-of-the-art equipment for accurate electrical and electronic assessments' },
+        { title: 'Rapid Response', desc: 'Quick turnaround for critical electrical safety inspections' }
+      ],
+      overview: 'Advanced Electrical & Electronics inspection services ensure systems and equipment meet applicable standards and operational safety requirements. Our engineers assess design, installation, and performance to provide clear, actionable outcomes for owners and operators of critical electrical infrastructure.',
+      keyInspectionAreas: 'IEC/ISO standards, IEEE standards, NFPA 70 (NEC), IS/IEC standards, local electrical codes, OEM specifications, and industry best practices. Where relevant, IECEx/ATEX, ISO 9001/14001/45001, and BIS guidelines are referenced.',
+      scopeOfInspection: 'Document review (design drawings, specifications, test reports), visual inspection of electrical installations, measurements and testing (insulation, continuity, earth resistance), functional verification of protection systems, risk assessment and control verification, and compliance confirmation against applicable standards.',
+      keyTests: 'Insulation resistance testing (IR), continuity and earth resistance measurements, leakage current checks, functional testing of protection relays, circuit breaker operation tests, transformer and motor testing, power quality analysis, and instrument calibration verification.',
+      qualityIssues: 'Frequent nonconformities include improper labeling, inadequate sealing or IP protection, missing documentation, damaged components, incorrect cable terminations, bypassed safety functions, inadequate earthing, and non-compliance with design specifications.',
+      riskAndSafetyIssues: 'Primary risks relate to electric shock hazards, arc flash incidents, fire from overheating, equipment failure, and EMC/EMI interference. Controls focus on proper protection devices, adequate guarding, lockout-tagout procedures, rated components, proper zoning, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports, nonconformity register with evidence, risk ratings, compliance statements, test certificates, and support for certification and authority approvals where applicable.'
+    }
+  },
+  { 
+    id: 'machinery-robotics',
+    isMain: true,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Industrial Machinery & Robotics', 
+    desc: 'Safety and precision inspections for automated and robotic systems.',
+    longDesc: 'Safety and precision inspections for automated and robotic systems.',
+    img: '/machine.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Industrial Machinery & Robotics Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your industrial machinery and robotic systems meet the highest safety and performance standards. We provide comprehensive audits for automated systems, robotics, and precision machinery to protect your personnel and optimize operations.',
+      subServices: [
+        { title: 'Robotics and Cobots Safety Validation', desc: 'Safety validation for robotics and collaborative robots under ISO 10218 ensuring proper integration, safety systems, and compliance with human-robot collaboration standards.', link: '/services/robotics-cobots-safety' },
+        { title: 'AGV/AMR Safety Audits', desc: 'Safety audits for Automated Guided Vehicles (AGVs) and Autonomous Mobile Robots (AMRs) ensuring obstacle detection, emergency stops, and safe navigation in industrial environments.', link: '/services/robotics-agv-amr' },
+        { title: 'CNC Machine Guarding Inspections', desc: 'CNC machine guarding inspections and precision alignment checks ensuring proper safety barriers, emergency stops, and interlock mechanisms for operator protection.', link: '/services/robotics-cnc-guarding' },
+        { title: '3D Printing Facility Safety Assessments', desc: 'Comprehensive safety assessments for 3D printing facilities including material handling, ventilation systems, and fire safety measures for additive manufacturing operations.', link: '/services/robotics-3d-printing' },
+        { title: 'IoT-Based Predictive Maintenance Inspections', desc: 'Inspections of IoT-based predictive maintenance systems ensuring proper sensor integration, data collection, and safety compliance for industrial equipment monitoring.', link: '/services/robotics-iot-maintenance' }
+      ],
+      whyChooseUs: [
+        { title: 'ISO 10218 Compliance', desc: 'Certified inspection processes following international robotics safety standards' },
+        { title: 'Minimal Downtime', desc: 'Efficient inspection processes designed to minimize production interruptions' },
+        { title: 'Expert Robotics Engineers', desc: 'Certified professionals with extensive automation and robotics expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable safety recommendations' }
+      ],
+      overview: 'Machinery & Robotics Safety inspection services ensure your automated systems meet international safety standards. Our comprehensive approach covers robot safety verification, machine guarding compliance, and risk assessment to protect personnel and ensure efficient operation in modern manufacturing facilities.',
+      keyInspectionAreas: 'ISO 10218 (Robotics Safety), ISO 13849 (Safety of Machinery), IEC 61508 (Functional Safety), ANSI/RIA R15.06, OSHA Machine Guarding Standards, Factory Act compliance, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (risk assessments, safety manuals, maintenance records), visual inspection of robotic systems and machinery, safety interlock verification, emergency stop testing, collaborative robot safety verification, machine guarding assessment, risk zone validation, and operator safety protocol review.',
+      keyTests: 'Safety interlock functional testing, emergency stop response time measurement, force and speed limiting tests for collaborative robots, light curtain and safety scanner verification, machine guarding integrity tests, risk assessment validation, and safety PLC functional testing.',
+      qualityIssues: 'Common nonconformities include inadequate machine guarding, missing or bypassed safety interlocks, insufficient risk assessments, improper collaborative robot safety zones, inadequate emergency stop accessibility, missing safety labels, insufficient operator training documentation, and non-compliance with ISO safety standards.',
+      riskAndSafetyIssues: 'Primary risks include personnel injury from moving machinery, robot collision hazards, inadequate machine guarding, pinch points and crush zones, electrical hazards, and non-compliance resulting in regulatory penalties. Safety controls focus on proper safety device installation, regular maintenance, operator training, risk assessments, and adherence to ISO standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, nonconformity register with risk ratings, safety compliance certificates where applicable, updated risk assessments, recommendations for safety improvements, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-renewable',
+    isMain: true,
+    icon: <Sun size={32} strokeWidth={1.5} />, 
+    title: 'Solar & Renewable Energy', 
+    desc: 'Sustainable safety for the green energy ecosystem.',
+    longDesc: 'Sustainable safety for the green energy ecosystem.',
+    img: '/solar.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Solar & Renewable Energy Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your solar and renewable energy systems meet the highest safety and performance standards. We provide comprehensive audits for solar farms, wind turbines, and energy storage systems to maximize efficiency and ensure compliance.',
+      subServices: [
+        { title: 'Drone-Based Thermographic Inspections', desc: 'Advanced drone-based thermographic inspections for solar farms identifying hot spots, module defects, and potential fire hazards in large-scale solar installations.', link: '/services/solar-drone-thermographic' },
+        { title: 'Wind Turbine Blade Integrity Inspections', desc: 'Comprehensive inspections of wind turbine blades for structural integrity, surface damage, and lightning protection ensuring optimal performance and safety.', link: '/services/solar-wind-turbine' },
+        { title: 'Floating Solar Plant Safety Checks', desc: 'Stability and electrical safety inspections for floating solar plants including mooring systems, electrical connections, and environmental impact assessments.', link: '/services/solar-floating-plant' },
+        { title: 'Inverter & Storage System Fire-Safety Audits', desc: 'Fire-safety audits for solar inverters and energy storage systems ensuring proper installation, thermal management, and compliance with fire safety standards.', link: '/services/solar-inverter-storage' },
+        { title: 'Smart Metering System Accuracy Inspections', desc: 'Accuracy and compliance inspections for smart metering systems ensuring proper calibration, data integrity, and regulatory compliance for renewable energy monitoring.', link: '/services/solar-smart-metering' }
+      ],
+      whyChooseUs: [
+        { title: 'IEC Standards Compliance', desc: 'Certified inspection processes following international renewable energy standards' },
+        { title: 'Advanced Technology', desc: 'State-of-the-art drone and thermal imaging technology for comprehensive assessments' },
+        { title: 'Expert Renewable Energy Engineers', desc: 'Certified professionals with extensive solar and wind energy expertise' },
+        { title: 'Performance Optimization', desc: 'Detailed reports with recommendations to maximize energy production' }
+      ],
+      overview: 'Solar & Renewable Energy inspection services ensure your green energy systems meet international safety and performance standards. Our comprehensive approach covers solar panel integrity, wind turbine safety, energy storage systems, and smart metering to maximize efficiency and ensure regulatory compliance.',
+      keyInspectionAreas: 'IEC 62446 (Solar PV Systems), IEC 61400 (Wind Turbines), IEC 62109 (Power Converters), NFPA 855 (Energy Storage Systems), IS/IEC standards, MNRE guidelines, CEA regulations, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (design drawings, certificates, maintenance records), visual inspection of solar panels and wind turbines, thermographic analysis using drones, electrical safety verification, structural integrity assessment, energy storage system audits, smart metering accuracy verification, and performance optimization analysis.',
+      keyTests: 'Thermographic imaging for hot spot detection, I-V curve testing for solar panels, wind turbine blade structural testing, structural stability testing, inverter efficiency and safety testing, battery storage system thermal runaway testing, smart meter accuracy verification, electrical insulation resistance testing, and performance ratio calculations.',
+      qualityIssues: 'Common nonconformities include defective solar panels with hot spots, damaged wind turbine blades, inadequate structural stability, inverter fire safety deficiencies, battery storage thermal management issues, inaccurate smart metering, improper electrical connections, missing maintenance records, and non-compliance with renewable energy standards.',
+      riskAndSafetyIssues: 'Primary risks include electrical hazards from high-voltage systems, fire risks in battery storage facilities, structural failures, wind turbine blade failures, arc flash incidents, and equipment malfunction leading to energy production loss. Safety controls focus on proper installation, regular maintenance, fire suppression systems, and adherence to IEC standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with thermographic images, nonconformity register with risk ratings, compliance certificates where applicable, performance optimization recommendations, updated maintenance schedules, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-security',
+    isMain: true,
+    icon: <ShieldAlert size={32} strokeWidth={1.5} />, 
+    title: 'Perimeter & Security Systems', 
+    desc: 'Integrated safety audits for high-security perimeters.',
+    longDesc: 'Integrated safety audits for high-security perimeters.',
+    img: '/per.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Perimeter & Security Systems Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your perimeter and security systems meet the highest safety and reliability standards. We provide comprehensive audits for high-security perimeters, access control systems, and integrated security infrastructure to protect critical assets.',
+      subServices: [
+        { title: 'Smart Fiber-Optic Perimeter Inspections', desc: 'Comprehensive inspections of fiber-optic perimeter detection systems ensuring proper installation, sensitivity calibration, and reliable intrusion detection.', link: '/services/perimeter-fiber-optic' },
+        { title: 'Drone-Based Perimeter Surveillance Validation', desc: 'Validation of drone-based perimeter surveillance systems ensuring proper coverage, detection capabilities, and integration with security command centers.', link: '/services/perimeter-drone-surveillance' },
+        { title: 'Command-and-Control System Cybersecurity Audits', desc: 'Cybersecurity audits for perimeter security command-and-control systems ensuring protection against cyber threats and secure data transmission.', link: '/services/perimeter-cybersecurity' },
+        { title: 'Biometric & Access Control Compliance Verification', desc: 'Compliance verification for biometric and access control systems ensuring proper authentication, data privacy, and integration with perimeter security systems.', link: '/services/perimeter-biometric-access' },
+        { title: 'Critical Infrastructure Protection Reviews', desc: 'Comprehensive protection reviews for critical infrastructure perimeters including airports, power plants, and government facilities ensuring multi-layered security.', link: '/services/perimeter-critical-infrastructure' }
+      ],
+      whyChooseUs: [
+        { title: 'Security Standards Compliance', desc: 'Certified inspection processes following international security standards' },
+        { title: '24/7 System Reliability', desc: 'Comprehensive testing to ensure continuous perimeter protection' },
+        { title: 'Expert Security Engineers', desc: 'Certified professionals with extensive perimeter security expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable security recommendations' }
+      ],
+      overview: 'Perimeter & Security System inspection services ensure your facility protection meets international safety and security standards. Our comprehensive approach covers physical barriers, access control, intrusion detection, and integrated security systems to protect personnel, assets, and operations.',
+      keyInspectionAreas: 'ISO 27001 (Information Security), IEC 62443 (Industrial Cybersecurity), NFPA 730 (Security Systems), IS/IEC standards, BIS security guidelines, local statutory requirements, and facility-specific security protocols.',
+      scopeOfInspection: 'Documentation review (security plans, system specifications, maintenance records), visual inspection of physical barriers and fencing, access control system verification, intrusion detection testing, CCTV integration assessment, sensor functionality testing, alarm system verification, and emergency response protocol review.',
+      keyTests: 'Intrusion detection sensor testing, access control system functional verification, alarm response time measurements, CCTV coverage and quality assessment, fence and barrier integrity testing, sensor zone validation, communication system reliability tests, and emergency lockdown procedure verification.',
+      qualityIssues: 'Common nonconformities include inadequate fence height or integrity, sensor blind spots, insufficient CCTV coverage, access control system vulnerabilities, missing or outdated security protocols, inadequate lighting, alarm system delays, and non-compliance with security standards.',
+      riskAndSafetyIssues: 'Primary risks include unauthorized access, security breaches, inadequate perimeter protection, sensor failures, system integration issues, false alarm incidents, and non-compliance resulting in security vulnerabilities. Safety controls focus on proper system design, regular maintenance, system integration verification, and adherence to security standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, security vulnerability assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for security enhancements, updated security protocols, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-surveillance',
+    isMain: true,
+    icon: <Camera size={32} strokeWidth={1.5} />, 
+    title: 'CCTV & Surveillance Systems', 
+    desc: 'Reliability and data security for modern surveillance infrastructures.',
+    longDesc: 'Reliability and data security for modern surveillance infrastructures.',
+    img: '/cctv.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive CCTV & Surveillance Systems Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your CCTV and surveillance systems meet the highest reliability and data security standards. We provide comprehensive audits for video surveillance infrastructure, network security, and data integrity to protect your assets and ensure compliance.',
+      subServices: [
+        { title: 'AI-Based Video Analytics Audits', desc: 'Comprehensive audits of AI-based video analytics systems ensuring accurate detection, proper algorithm configuration, and compliance with privacy regulations.', link: '/services/cctv-ai-analytics' },
+        { title: 'Cybersecurity Inspections for IP-Based CCTV Networks', desc: 'Cybersecurity inspections for IP-based CCTV networks ensuring proper network segmentation, encryption, and protection against unauthorized access.', link: '/services/cctv-ip-network-security' },
+        { title: 'Thermal Imaging CCTV Functionality Checks', desc: 'Functionality checks for thermal imaging CCTV systems ensuring proper calibration, detection range, and integration with standard surveillance systems.', link: '/services/cctv-thermal-imaging' },
+        { title: 'Drone-Camera Integration Inspections', desc: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.', link: '/services/cctv-drone-integration' },
+        { title: 'Video Evidence Chain-of-Custody Audits', desc: 'Chain-of-custody audits for video evidence ensuring proper storage, encryption, and compliance with legal requirements for admissibility in court.', link: '/services/cctv-chain-of-custody' }
+      ],
+      whyChooseUs: [
+        { title: 'Data Security Compliance', desc: 'Certified inspection processes following international data security standards' },
+        { title: '24/7 System Reliability', desc: 'Comprehensive testing to ensure continuous surveillance coverage' },
+        { title: 'Expert Surveillance Engineers', desc: 'Certified professionals with extensive CCTV and network security expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable security recommendations' }
+      ],
+      overview: 'CCTV & Surveillance System inspection services ensure your video surveillance meets international standards for security and data protection. Our comprehensive approach covers camera coverage, recording systems, data storage compliance, and integrated monitoring to ensure effective security and regulatory compliance.',
+      keyInspectionAreas: 'ISO 27001 (Information Security), IEC 62443 (Industrial Cybersecurity), ONVIF standards, GDPR compliance, IS/IEC standards, BIS security guidelines, local statutory requirements, and facility-specific surveillance protocols.',
+      scopeOfInspection: 'Documentation review (system design, data retention policies, privacy compliance), visual inspection of camera installations, coverage area assessment, recording system verification, video quality testing, storage capacity analysis, network security verification, data protection compliance review, and system integration assessment.',
+      keyTests: 'Camera resolution and image quality testing, night vision and low-light performance verification, recording system functionality tests, storage capacity and redundancy verification, network bandwidth and latency measurements, video analytics accuracy testing, motion detection sensitivity tests, and system failover verification.',
+      qualityIssues: 'Common nonconformities include inadequate camera coverage, poor image quality, insufficient storage capacity, missing data retention policies, network security vulnerabilities, non-compliant data protection practices, camera positioning issues, inadequate lighting, and non-compliance with GDPR or local data protection regulations.',
+      riskAndSafetyIssues: 'Primary risks include inadequate surveillance coverage, data breach vulnerabilities, privacy violations, system failures, insufficient data retention, network security issues, and non-compliance resulting in legal penalties. Safety controls focus on proper system design, cybersecurity measures, data protection protocols, regular maintenance, and adherence to privacy regulations.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with coverage maps and image samples, nonconformity register with risk ratings, data protection compliance verification, security assessment reports, recommendations for system improvements, updated surveillance protocols, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-health',
+    isMain: true,
+    icon: <Building size={32} strokeWidth={1.5} />, 
+    title: 'Building Health & Smart Buildings', 
+    desc: 'Enhancing occupant safety, comfort, and sustainability.',
+    longDesc: 'Enhancing occupant safety, comfort, and sustainability.',
+    img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Building Health & Smart Buildings Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your buildings meet the highest health, safety, and sustainability standards. We provide comprehensive audits for indoor air quality, smart building systems, energy efficiency, and occupant comfort to create healthier and more sustainable environments.',
+      subServices: [
+        { title: 'Indoor Air Quality (PM2.5/PM10) Inspections', desc: 'Comprehensive indoor air quality inspections measuring PM2.5, PM10, and other pollutants ensuring healthy indoor environments and compliance with air quality standards.', link: '/services/building-air-quality' },
+        { title: 'Smart Building IoT System Safety Audits', desc: 'Safety audits for smart building IoT systems ensuring proper sensor integration, data security, and safe operation of connected building management systems.', link: '/services/building-iot-safety' },
+        { title: 'Green Building Energy Efficiency Assessments', desc: 'Energy efficiency assessments for green buildings evaluating HVAC systems, lighting, insulation, and renewable energy integration for optimal sustainability.', link: '/services/building-green-energy' },
+        { title: 'Acoustic & Lighting Comfort Audits', desc: 'Comprehensive audits of acoustic and lighting systems ensuring optimal comfort levels, noise reduction, and proper illumination for occupant well-being.', link: '/services/building-acoustic-lighting' },
+        { title: 'Human-Centric Lighting System Evaluations', desc: 'Evaluations of human-centric lighting systems ensuring proper circadian rhythm support, color temperature control, and integration with building automation.', link: '/services/building-human-centric-lighting' }
+      ],
+      whyChooseUs: [
+        { title: 'Health & Safety Standards', desc: 'Certified inspection processes following international building health standards' },
+        { title: 'Energy Efficiency', desc: 'Comprehensive assessments to optimize building energy performance' },
+        { title: 'Expert Building Engineers', desc: 'Certified professionals with extensive building health and smart systems expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable recommendations for building optimization' }
+      ],
+      overview: 'Building Health & Smart Building inspection services ensure your facilities meet sustainability, indoor air quality, and smart technology standards. Our comprehensive approach covers HVAC systems, IAQ monitoring, energy efficiency, and smart building technologies to create healthy and efficient environments.',
+      keyInspectionAreas: 'ASHRAE standards (Indoor Air Quality), LEED certification, WELL Building Standard, IGBC Green Building Rating, ISHRAE guidelines, NBC (National Building Code), IS/IEC standards, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (building design, HVAC specifications, IAQ reports), visual inspection of HVAC systems and smart building controls, indoor air quality testing, energy efficiency assessment, lighting quality verification, acoustic comfort testing, smart sensor functionality verification, building automation system assessment, and occupant wellness protocol review.',
+      keyTests: 'Indoor air quality testing (CO2, VOCs, particulates), HVAC system performance testing, temperature and humidity monitoring, lighting quality measurements, acoustic testing, energy consumption analysis, smart sensor calibration verification, building automation system functional testing, and occupancy sensor verification.',
+      qualityIssues: 'Common nonconformities include poor indoor air quality, inadequate ventilation, improper HVAC maintenance, insufficient natural lighting, excessive noise levels, smart system integration issues, sensor calibration errors, missing IAQ monitoring, and non-compliance with green building standards.',
+      riskAndSafetyIssues: 'Primary risks include poor indoor air quality affecting occupant health, inadequate ventilation leading to contamination, HVAC system failures, thermal comfort issues, excessive energy consumption, smart system vulnerabilities, and non-compliance resulting in certification loss. Safety controls focus on proper HVAC design, regular maintenance, IAQ monitoring, energy management, and adherence to building health standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with IAQ test results, energy efficiency assessments, nonconformity register with risk ratings, LEED/WELL compliance verification, recommendations for building improvements, updated maintenance schedules, and support for green building certification and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-infrastructure',
+    isMain: true,
+    icon: <Map size={32} strokeWidth={1.5} />, 
+    title: 'Critical Infrastructure Inspections', 
+    desc: 'Comprehensive safety audits for essential national infrastructure including airports, railways, nuclear facilities, ports, and smart cities to ensure protection of strategic assets.',
+    longDesc: 'Comprehensive safety audits for essential national infrastructure including airports, railways, nuclear facilities, ports, and smart cities to ensure protection of strategic assets.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786943984/ChatGPT_Image_Aug_17_2026_10_49_09_AM_m5gjgw.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Critical Infrastructure Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your critical infrastructure meets the highest safety and reliability standards. We provide comprehensive safety audits for essential national infrastructure including airports, railways, nuclear facilities, ports, and smart cities to ensure protection of strategic assets and maintain operational continuity.',
+      subServices: [
+        { title: 'Airport Security & Safety Inspections', desc: 'Comprehensive security and safety inspections for airports including perimeter security, access control, and critical systems ensuring operational reliability and compliance.', link: '/services/critical-airport-security' },
+        { title: 'Railway Signaling System Inspections', desc: 'Safety inspections for railway signaling systems ensuring proper operation, redundancy, and compliance with railway safety standards for passenger and freight transport.', link: '/services/critical-railway-signaling' },
+        { title: 'Port & Marine Infrastructure Safety Audits', desc: 'Safety audits for port and marine infrastructure including cargo handling systems, navigation aids, and emergency response systems ensuring maritime safety.', link: '/services/critical-port-marine' },
+        { title: 'Nuclear Facility Perimeter Security Inspections', desc: 'Comprehensive perimeter security inspections for nuclear facilities ensuring multi-layered protection, access control, and compliance with nuclear safety regulations.', link: '/services/critical-nuclear-perimeter' },
+        { title: 'Smart City Infrastructure Inspections', desc: 'Integrated inspections for smart city infrastructure including traffic management, public safety systems, and IoT networks ensuring efficient and safe urban operations.', link: '/services/critical-smart-city' }
+      ],
+      whyChooseUs: [
+        { title: 'National Security Standards', desc: 'Certified inspection processes following international critical infrastructure standards' },
+        { title: '24/7 Operational Continuity', desc: 'Comprehensive testing to ensure continuous infrastructure operations' },
+        { title: 'Expert Infrastructure Engineers', desc: 'Certified professionals with extensive critical infrastructure expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable safety recommendations' }
+      ],
+      overview: 'Critical Infrastructure inspection services ensure essential facilities meet stringent safety and security standards. Our comprehensive approach covers aviation, railway, maritime, nuclear, and smart city infrastructure to protect public safety and ensure operational continuity.',
+      keyInspectionAreas: 'ICAO standards (Aviation), IRSS (Railway Safety), IMO standards (Maritime), IAEA standards (Nuclear), ISO 27001 (Information Security), IS/IEC standards, national infrastructure protection guidelines, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (safety management systems, emergency procedures, maintenance records), visual inspection of critical infrastructure, security system verification, emergency response system testing, communication infrastructure assessment, backup power system verification, physical security barrier inspection, and business continuity protocol review.',
+      keyTests: 'Emergency response system functionality testing, backup power system testing, communication system reliability verification, security system integration tests, structural integrity assessments, fire detection and suppression testing, access control verification, and disaster recovery system testing.',
+      qualityIssues: 'Common nonconformities include inadequate emergency response procedures, insufficient backup systems, security system vulnerabilities, communication infrastructure deficiencies, missing maintenance records, inadequate physical security barriers, non-compliant safety management systems, and insufficient business continuity planning.',
+      riskAndSafetyIssues: 'Primary risks include infrastructure failures affecting public safety, security breaches, inadequate emergency response capabilities, communication failures, backup system inadequacies, terrorist threats, natural disasters, and non-compliance resulting in operational shutdowns. Safety controls focus on robust infrastructure design, redundant systems, regular maintenance, security protocols, and adherence to international standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with risk assessments, nonconformity register with priority ratings, compliance certificates where applicable, emergency preparedness recommendations, security enhancement proposals, business continuity improvements, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-safety',
+    isMain: true,
+    icon: <ShieldAlert size={32} strokeWidth={1.5} />, 
+    title: 'Specialized Environment & Safety', 
+    desc: 'Advanced inspections for critical environmental and safety systems including EMR/EMF exposure, fire detection, water quality, radiation safety, and drone compliance assessments.',
+    longDesc: 'Advanced inspections for critical environmental and safety systems including EMR/EMF exposure, fire detection, water quality, radiation safety, and drone compliance assessments.',
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Specialized Environment & Safety Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your facilities meet the highest environmental compliance and safety standards. We provide advanced inspections for critical environmental and safety systems including EMR/EMF exposure, fire detection, water quality, radiation safety, and drone compliance assessments to protect personnel and ensure regulatory compliance.',
+      subServices: [
+        { title: 'Fire Detection System Inspections', desc: 'Comprehensive inspections of fire detection and alarm systems ensuring proper sensor placement, functionality, and integration with emergency response systems.', link: '/services/environment-fire-detection' },
+        { title: 'Radiation Safety Inspections', desc: 'Radiation safety inspections for facilities using radioactive materials ensuring proper shielding, monitoring, and compliance with radiation safety regulations.', link: '/services/environment-radiation-safety' },
+        { title: 'Water Quality Inspections', desc: 'Water quality inspections for industrial and municipal facilities ensuring compliance with water quality standards and proper treatment system operation.', link: '/services/environment-water-quality' },
+        { title: 'EMR/EMF Safety Assessments', desc: 'Electromagnetic radiation and field safety assessments ensuring exposure levels are within safe limits and compliance with international EMR/EMF guidelines.', link: '/services/environment-emr-emf' },
+        { title: 'Drone-Based Environmental Compliance Monitoring', desc: 'Drone-based monitoring for environmental compliance including air quality, emissions, and site inspections ensuring adherence to environmental regulations.', link: '/services/environment-drone-compliance' }
+      ],
+      whyChooseUs: [
+        { title: 'Environmental Compliance', desc: 'Certified inspection processes following international environmental standards' },
+        { title: 'Regulatory Compliance', desc: 'Comprehensive assessments to ensure full regulatory compliance' },
+        { title: 'Expert Environmental Engineers', desc: 'Certified professionals with extensive environmental and safety expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable compliance recommendations' }
+      ],
+      overview: 'Environment & Safety inspection services ensure your facilities meet environmental protection and workplace safety standards. Our comprehensive approach covers water quality, fire safety, radiation protection, EMR/EMF compliance, and drone operations to protect the environment, personnel, and communities.',
+      keyInspectionAreas: 'CPCB guidelines (Water Quality), NFPA standards (Fire Safety), AERB regulations (Radiation), ICNIRP guidelines (EMR/EMF), DGCA regulations (Drone Operations), IS/IEC standards, Environmental Protection Act, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (environmental permits, safety procedures, monitoring records), visual inspection of environmental control systems, water quality testing, fire safety system verification, radiation measurement, EMR/EMF exposure assessment, drone operation compliance verification, waste management inspection, and emergency response protocol review.',
+      keyTests: 'Water quality analysis (pH, turbidity, contaminants), fire detection and suppression system testing, radiation level measurements, EMR/EMF exposure monitoring, air quality testing, noise level measurements, drone flight safety verification, emergency alarm testing, and environmental monitoring system calibration.',
+      qualityIssues: 'Common nonconformities include water quality parameter violations, inadequate fire safety systems, radiation exposure exceeding limits, EMR/EMF non-compliance, improper waste disposal, missing environmental permits, inadequate drone safety protocols, and non-compliance with environmental regulations.',
+      riskAndSafetyIssues: 'Primary risks include environmental contamination, water pollution, fire hazards, radiation exposure, EMR/EMF health effects, air quality issues, drone accidents, and non-compliance resulting in penalties and operational shutdowns. Safety controls focus on proper environmental management, regular monitoring, fire prevention systems, radiation protection, and adherence to environmental regulations.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with test results, environmental compliance assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for environmental improvements, updated monitoring protocols, and support for environmental permits and regulatory submissions.'
+    }
+  },
+  { 
+    id: 'high-tech',
+    isMain: true,
+    icon: <Zap size={32} strokeWidth={1.5} />, 
+    title: 'High-Tech & Future-Ready Areas', 
+    desc: 'Ensuring safety in next-generation technologies including EV charging stations, hydrogen fueling, Industry 4.0 systems, cyber-physical integration, and AI-driven predictive assessments.',
+    longDesc: 'Ensuring safety in next-generation technologies including EV charging stations, hydrogen fueling, Industry 4.0 systems, cyber-physical integration, and AI-driven predictive assessments.',
+    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive High-Tech & Future-Ready Areas Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your cutting-edge technology systems meet the highest safety and performance standards. We provide comprehensive audits ensuring safety in next-generation technologies including EV charging stations, hydrogen fueling, Industry 4.0 systems, cyber-physical integration, and AI-driven predictive assessments to prepare your facilities for the future.',
+      subServices: [
+        { title: 'Industry 4.0 System Inspections', desc: 'Comprehensive inspections for Industry 4.0 systems including cyber-physical systems, IoT integration, and digital twin implementations ensuring safe and efficient operations.', link: '/services/hightech-industry4' },
+        { title: 'EV Charging Infrastructure Inspections', desc: 'Safety and compliance inspections for electric vehicle charging infrastructure ensuring proper installation, electrical safety, and grid integration.', link: '/services/hightech-ev-charging' },
+        { title: 'Hydrogen Fueling Station Safety Inspections', desc: 'Critical safety inspections for hydrogen fueling stations ensuring proper storage, dispensing systems, and compliance with hydrogen safety standards.', link: '/services/hightech-hydrogen-fueling' },
+        { title: 'AI Predictive Maintenance System Audits', desc: 'Audits of AI-based predictive maintenance systems ensuring accurate predictions, proper sensor integration, and safe operation of maintenance algorithms.', link: '/services/hightech-ai-predictive' },
+        { title: 'Cyber-Physical System Security Inspections', desc: 'Security inspections for cyber-physical systems ensuring proper integration of physical and digital components with robust cybersecurity measures.', link: '/services/hightech-cyber-physical' }
+      ],
+      whyChooseUs: [
+        { title: 'Future Technology Standards', desc: 'Certified inspection processes following emerging technology standards' },
+        { title: 'Cutting-Edge Expertise', desc: 'Specialized knowledge in next-generation technology systems' },
+        { title: 'Expert Technology Engineers', desc: 'Certified professionals with extensive high-tech systems expertise' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed inspection reports with actionable technology recommendations' }
+      ],
+      overview: 'High-Tech & Future-Ready inspection services ensure your emerging technology systems meet safety and performance standards. Our comprehensive approach covers AI systems, Industry 4.0, EV charging, hydrogen infrastructure, and cyber-physical systems to support innovation while ensuring safety and compliance.',
+      keyInspectionAreas: 'IEC 61508 (Functional Safety), ISO/IEC 27001 (Information Security), IEC 61851 (EV Charging), NFPA 2 (Hydrogen Technologies), Industry 4.0 standards, IS/IEC standards, emerging technology guidelines, and local statutory requirements.',
+      scopeOfInspection: 'Documentation review (technology specifications, safety protocols, cybersecurity measures), visual inspection of high-tech installations, EV charging infrastructure testing, hydrogen system safety verification, AI system safety assessment, cyber-physical system security testing, IoT device verification, and emerging technology risk assessment.',
+      keyTests: 'EV charging station functionality and safety testing, hydrogen system pressure and leak testing, AI algorithm safety verification, cybersecurity vulnerability assessments, IoT device communication testing, Industry 4.0 integration testing, functional safety verification, and cyber-physical system resilience testing.',
+      qualityIssues: 'Common nonconformities include inadequate cybersecurity measures, EV charging safety deficiencies, hydrogen system safety violations, AI system safety gaps, insufficient functional safety design, IoT device vulnerabilities, missing technology safety protocols, and non-compliance with emerging technology standards.',
+      riskAndSafetyIssues: 'Primary risks include cybersecurity breaches, EV charging electrical hazards, hydrogen explosion risks, AI system failures, cyber-physical attacks, IoT device vulnerabilities, technology integration issues, and non-compliance resulting in safety incidents. Safety controls focus on robust cybersecurity, proper technology design, regular updates, risk assessments, and adherence to emerging technology standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with technology assessments, cybersecurity vulnerability reports, nonconformity register with risk ratings, safety compliance verification, recommendations for technology improvements, updated safety protocols, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'explosion-equipment-inspections',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Explosion-proof Equipment Inspections', 
+    desc: 'Comprehensive inspections of Ex-d, Ex-e, and Ex-i equipment ensuring full IECEx/ATEX compliance. We verify proper installation, maintenance, and operational integrity of explosion-proof systems.',
+    longDesc: 'Comprehensive inspections of Ex-d, Ex-e, and Ex-i equipment ensuring full IECEx/ATEX compliance. We verify proper installation, maintenance, and operational integrity of explosion-proof systems.',
+    img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Explosion-proof Equipment Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your explosion-proof equipment inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following international safety and compliance standards' },
+        { title: 'Advanced Testing Equipment', desc: 'State-of-the-art diagnostic tools and testing equipment for comprehensive assessments' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive industry expertise and technical knowledge' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed reports with actionable recommendations to ensure safety and compliance' }
+      ],
+      overview: 'Comprehensive inspections of Ex-d, Ex-e, and Ex-i equipment ensuring full IECEx/ATEX compliance. We verify proper installation, maintenance, and operational integrity of explosion-proof systems. Our comprehensive inspection services assess system integrity, compliance, and performance to ensure safe and efficient operation.',
+      keyInspectionAreas: 'IECEx certification standards, ATEX directives, IEC 60079 series, equipment type verification (Ex-d, Ex-e, Ex-i), installation compliance, and maintenance documentation review.',
+      scopeOfInspection: 'Visual inspection of explosion-proof equipment, functional testing, compliance verification, performance analysis, safety assessment, documentation review, and support for certification.',
+      keyTests: 'Functional testing, enclosure integrity verification, electrical continuity tests, insulation resistance measurements, IP rating confirmation, and safety interlock testing.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with IECEx/ATEX standards, missing certification labels, inadequate documentation, damaged enclosures, and insufficient maintenance records.',
+      riskAndSafetyIssues: 'Primary risks include ignition sources in hazardous atmospheres, equipment failures, personnel exposure to explosive environments, and non-compliance penalties. Safety controls focus on proper equipment selection, installation verification, regular maintenance, and adherence to certification standards.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'explosion-area-classification',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Hazardous Area Classification Validation', 
+    desc: 'Accurate validation of hazardous area classifications (Zones 0, 1, 2) for proper equipment placement and compliance. We ensure your facility adheres to international zoning standards.',
+    longDesc: 'Accurate validation of hazardous area classifications (Zones 0, 1, 2) for proper equipment placement and compliance. We ensure your facility adheres to international zoning standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786508138/ChatGPT_Image_Aug_12_2026_09_44_09_AM_jt4h30.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Hazardous Area Classification Validation Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your hazardous area classification validation systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'explosion-dust-prevention',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Dust Explosion Prevention Audits', 
+    desc: 'Specialized audits across silos, mills, and conveyor systems to prevent dust explosion risks. We assess material handling processes and recommend safety improvements.',
+    longDesc: 'Specialized audits across silos, mills, and conveyor systems to prevent dust explosion risks. We assess material handling processes and recommend safety improvements.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787031713/ChatGPT_Image_Aug_18_2026_11_11_34_AM_z5gtny.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Dust Explosion Prevention Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your dust explosion prevention audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'explosion-hydrogen-plant',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Hydrogen Plant Explosion Safety Inspections', 
+    desc: 'Critical safety inspections for hydrogen facilities ensuring proper containment and venting compliance. Essential for renewable energy and industrial gas facilities.',
+    longDesc: 'Critical safety inspections for hydrogen facilities ensuring proper containment and venting compliance. Essential for renewable energy and industrial gas facilities.',
+    img: 'https://images.unsplash.com/photo-1542396601-dca920ea2807?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Hydrogen Plant Explosion Safety Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your hydrogen plant explosion safety inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'explosion-bess-assessments',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'BESS Fire & Explosion Risk Assessments', 
+    desc: 'Comprehensive fire and explosion risk assessments for Battery Energy Storage Systems (BESS) ensuring safe operation and compliance with international safety standards.',
+    longDesc: 'Comprehensive fire and explosion risk assessments for Battery Energy Storage Systems (BESS) ensuring safe operation and compliance with international safety standards.',
+    img: '/bess.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive BESS Fire & Explosion Risk Assessments Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your bess fire & explosion risk assessments systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'electrical-smart-grid-iot',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Smart Grid & IoT Safety Audits', 
+    desc: 'Verification of connectivity and insulation performance for smart grid systems and IoT networks. We ensure reliable and safe operation of modern electrical infrastructure.',
+    longDesc: 'Verification of connectivity and insulation performance for smart grid systems and IoT networks. We ensure reliable and safe operation of modern electrical infrastructure.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787030225/ChatGPT_Image_Aug_18_2026_10_46_17_AM_wr9sui.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Smart Grid & IoT Safety Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your smart grid and IoT systems meet the highest safety and performance standards. We provide comprehensive audits for connectivity, insulation performance, and network reliability to ensure safe and efficient operation of modern electrical infrastructure.',
+      subServices: [
+        { title: 'Connectivity & Network Verification', desc: 'Comprehensive assessment of network connectivity, communication protocols, and data transmission reliability ensuring proper operation of smart grid and IoT systems. We verify network topology, protocol compliance, and data integrity.', link: '#' },
+        { title: 'Insulation Performance Testing', desc: 'Evaluation of electrical insulation integrity, dielectric strength, and protection against electrical faults ensuring safe operation. We assess insulation resistance, breakdown voltage, and thermal performance.', link: '#' },
+        { title: 'Cybersecurity & Network Security', desc: 'Inspection of cybersecurity measures, access controls, and protection against unauthorized access or cyber threats. We assess firewall configurations, encryption protocols, and intrusion detection systems.', link: '#' },
+        { title: 'System Integration Validation', desc: 'Verification of proper integration between smart grid components, IoT devices, and control systems ensuring seamless operation. We test interoperability, data flow, and system compatibility.', link: '#' },
+        { title: 'Performance & Reliability Analysis', desc: 'Assessment of system performance, reliability metrics, and operational efficiency to ensure optimal smart grid and IoT network operation.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'IEC & IEEE Standards Compliance', desc: 'Certified inspection processes following international smart grid and IoT safety standards including IEC 61850, IEEE 1547, and IEC 62443.' },
+        { title: 'Advanced Testing Equipment', desc: 'State-of-the-art network analyzers, insulation testers, and cybersecurity assessment tools for comprehensive evaluations.' },
+        { title: 'Expert Electrical & Network Engineers', desc: 'Certified professionals with extensive smart grid, IoT, and cybersecurity expertise.' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed reports with actionable recommendations to ensure network reliability and cybersecurity compliance.' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'electrical-lithium-battery',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Lithium-ion Battery Safety Inspections', 
+    desc: 'Comprehensive safety inspections for lithium-ion batteries in EV, UPS, and solar systems. We verify proper installation, thermal management, and compliance with safety standards.',
+    longDesc: 'Comprehensive safety inspections for lithium-ion batteries in EV, UPS, and solar systems. We verify proper installation, thermal management, and compliance with safety standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787030301/ChatGPT_Image_Aug_18_2026_10_47_48_AM_btoybi.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Lithium-ion Battery Safety Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your lithium-ion battery systems meet the highest safety and performance standards. We provide comprehensive audits for battery installations in EV, UPS, and solar systems, including thermal management, proper installation, and compliance with international safety standards.',
+      subServices: [
+        { title: 'Battery Installation Verification', desc: 'Assessment of proper battery installation, mounting, and securing ensuring safe operation and preventing damage or failure. We verify mounting hardware, spacing, and structural support.', link: '#' },
+        { title: 'Thermal Management Assessment', desc: 'Evaluation of cooling systems, temperature monitoring, and thermal protection ensuring batteries operate within safe temperature ranges. We assess cooling efficiency and thermal runaway prevention.', link: '#' },
+        { title: 'Electrical Safety Inspection', desc: 'Verification of proper electrical connections, protection devices, and grounding ensuring safe electrical operation. We test overcurrent protection, isolation, and fault detection systems.', link: '#' },
+        { title: 'Battery Performance Testing', desc: 'Comprehensive testing of battery capacity, cycle life, and performance characteristics to ensure optimal operation and longevity.', link: '#' },
+        { title: 'Compliance & Certification', desc: 'Assessment of compliance with battery safety standards including UN 38.3, IEC 62133, UL 1973, and local regulatory requirements.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following UN 38.3, IEC 62133, and UL battery safety standards.' },
+        { title: 'Advanced Battery Testing Equipment', desc: 'State-of-the-art battery analyzers, thermal imaging, and safety testing equipment for comprehensive assessments.' },
+        { title: 'Expert Battery Safety Engineers', desc: 'Certified professionals with extensive lithium-ion battery safety and thermal management expertise.' },
+        { title: 'Risk Mitigation', desc: 'Detailed reports with recommendations to prevent thermal runaway, fires, and ensure long-term battery safety.' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'electrical-emc-emi',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'EMC/EMI Compliance Inspections', 
+    desc: 'Electromagnetic compatibility and interference inspections for critical electronic systems ensuring proper shielding and compliance with international EMC standards.',
+    longDesc: 'Electromagnetic compatibility and interference inspections for critical electronic systems ensuring proper shielding and compliance with international EMC standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787030489/ChatGPT_Image_Aug_18_2026_10_51_11_AM_y9nwfk.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive EMC/EMI Compliance Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your electronic systems meet electromagnetic compatibility and interference requirements. We provide comprehensive audits for critical electronic systems, including proper shielding, compliance with international EMC standards, and protection against electromagnetic interference.',
+      subServices: [
+        { title: 'EMC/EMI Compliance Testing', desc: 'Comprehensive electromagnetic compatibility and interference testing to ensure equipment meets regulatory requirements and operates without interfering with other systems.', link: '#' },
+        { title: 'Emission Measurements', desc: 'Assessment of electromagnetic emissions including conducted and radiated emissions to verify compliance with EMC standards.', link: '#' },
+        { title: 'Immunity Testing', desc: 'Evaluation of equipment immunity to electromagnetic disturbances including ESD, surge, and RF immunity testing.', link: '#' },
+        { title: 'Shielding Effectiveness Assessment', desc: 'Inspection of shielding materials, enclosures, and grounding systems to ensure effective electromagnetic protection.', link: '#' },
+        { title: 'Standards Compliance Verification', desc: 'Verification of compliance with IEC, CISPR, and local EMC/EMI standards including CE marking requirements.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'IEC & CISPR Standards Compliance', desc: 'Certified testing following IEC 61000, CISPR standards, and international EMC/EMI regulations.' },
+        { title: 'Advanced EMC Testing Equipment', desc: 'State-of-the-art spectrum analyzers, EMC test chambers, and measurement equipment for accurate assessments.' },
+        { title: 'Expert EMC Engineers', desc: 'Certified professionals with extensive electromagnetic compatibility and interference testing expertise.' },
+        { title: 'Regulatory Support', desc: 'Comprehensive reports supporting CE marking, FCC compliance, and other regulatory submissions.' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'electrical-data-center',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Data Center Infrastructure Audits', 
+    desc: 'Electrical reliability and redundancy audits for data center infrastructure. We verify power distribution, backup systems, and cooling infrastructure for optimal performance.',
+    longDesc: 'Electrical reliability and redundancy audits for data center infrastructure. We verify power distribution, backup systems, and cooling infrastructure for optimal performance.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787030600/ChatGPT_Image_Aug_18_2026_10_52_50_AM_e83fra.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Data Center Infrastructure Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your data center infrastructure meets the highest reliability and performance standards. We provide comprehensive audits for electrical reliability, redundancy, power distribution, backup systems, and cooling infrastructure to ensure optimal performance and uptime.',
+      subServices: [
+        { title: 'Infrastructure Assessment', desc: 'Comprehensive evaluation of data center infrastructure including power distribution, cooling systems, and physical security to ensure reliable operation.', link: '#' },
+        { title: 'Electrical System Audits', desc: 'Detailed inspection of electrical systems including UPS, generators, PDUs, and power distribution to ensure redundancy and reliability.', link: '#' },
+        { title: 'Cooling & HVAC Evaluation', desc: 'Assessment of cooling systems, airflow management, and environmental controls to maintain optimal operating conditions.', link: '#' },
+        { title: 'Fire Safety & Suppression Systems', desc: 'Inspection of fire detection, suppression systems, and emergency response procedures to ensure data center safety.', link: '#' },
+        { title: 'Compliance & Certification', desc: 'Verification of compliance with data center standards including TIA-942, Uptime Institute Tier standards, and local building codes.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'TIA-942 & Uptime Institute Standards', desc: 'Certified inspections following Tier standards and data center best practices for reliability and uptime.' },
+        { title: 'Advanced Diagnostic Equipment', desc: 'State-of-the-art power quality analyzers, thermal imaging, and infrastructure monitoring tools.' },
+        { title: 'Expert Data Center Engineers', desc: 'Certified professionals with extensive data center infrastructure and operations expertise.' },
+        { title: 'Uptime Optimization', desc: 'Detailed reports with recommendations to improve reliability, efficiency, and achieve higher Tier certifications.' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'electrical-cybersecurity',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Cybersecurity Inspections for Industrial Control Systems', 
+    desc: 'Cybersecurity audits for industrial control and SCADA systems ensuring protection against cyber threats and compliance with security standards.',
+    longDesc: 'Cybersecurity audits for industrial control and SCADA systems ensuring protection against cyber threats and compliance with security standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787030746/ChatGPT_Image_Aug_18_2026_10_55_25_AM_gezspf.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Cybersecurity Inspection Services for Industrial Control Systems',
+      detailIntroDesc: 'Our specialized inspection services ensure your industrial control and SCADA systems are protected against cyber threats. We provide comprehensive cybersecurity audits including vulnerability assessments, security controls verification, and compliance with international cybersecurity standards.',
+      subServices: [
+        { title: 'Vulnerability Assessment', desc: 'Comprehensive identification of security vulnerabilities, weaknesses, and potential attack vectors in industrial control systems and networks.', link: '#' },
+        { title: 'Security Controls Verification', desc: 'Assessment of security controls, access management, and protection mechanisms ensuring proper cybersecurity measures are in place.', link: '#' },
+        { title: 'Network Security Audit', desc: 'Evaluation of network security, segmentation, and protection against unauthorized access or cyber attacks. We assess firewall rules, network segmentation, and intrusion detection.', link: '#' },
+        { title: 'Compliance Verification', desc: 'Verification of compliance with cybersecurity standards including IEC 62443, NIST, ISO 27001, and local regulatory requirements.', link: '#' },
+        { title: 'Penetration Testing', desc: 'Controlled security testing to identify vulnerabilities and assess the effectiveness of security controls and incident response procedures.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'IEC 62443 & NIST Standards', desc: 'Certified cybersecurity assessments following IEC 62443, NIST Cybersecurity Framework, and ISO 27001 standards.' },
+        { title: 'Advanced Security Tools', desc: 'State-of-the-art vulnerability scanners, penetration testing tools, and security assessment platforms.' },
+        { title: 'Expert Cybersecurity Engineers', desc: 'Certified professionals with extensive industrial cybersecurity and SCADA security expertise.' },
+        { title: 'Risk Mitigation', desc: 'Detailed reports with actionable recommendations to strengthen security posture and prevent cyber attacks.' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'robotics-cobots-safety',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Robotics and Cobots Safety Validation', 
+    desc: 'Safety validation for robotics and collaborative robots under ISO 10218 ensuring proper integration, safety systems, and compliance with human-robot collaboration standards.',
+    longDesc: 'Safety validation for robotics and collaborative robots under ISO 10218 ensuring proper integration, safety systems, and compliance with human-robot collaboration standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028991/ChatGPT_Image_Aug_18_2026_10_26_07_AM_mhu2j1.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Robotics and Cobots Safety Validation Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your robotics and cobots safety validation systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'robotics-agv-amr',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'AGV/AMR Safety Audits', 
+    desc: 'Safety audits for Automated Guided Vehicles (AGVs) and Autonomous Mobile Robots (AMRs) ensuring obstacle detection, emergency stops, and safe navigation in industrial environments.',
+    longDesc: 'Safety audits for Automated Guided Vehicles (AGVs) and Autonomous Mobile Robots (AMRs) ensuring obstacle detection, emergency stops, and safe navigation in industrial environments.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787029219/ChatGPT_Image_Aug_18_2026_10_30_07_AM_syutdw.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive AGV/AMR Safety Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your agv/amr safety audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'robotics-cnc-guarding',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'CNC Machine Guarding Inspections', 
+    desc: 'CNC machine guarding inspections and precision alignment checks ensuring proper safety barriers, emergency stops, and interlock mechanisms for operator protection.',
+    longDesc: 'CNC machine guarding inspections and precision alignment checks ensuring proper safety barriers, emergency stops, and interlock mechanisms for operator protection.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787029390/ChatGPT_Image_Aug_18_2026_10_32_56_AM_xmgl3n.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive CNC Machine Guarding Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your cnc machine guarding inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'robotics-3d-printing',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: '3D Printing Facility Safety Assessments', 
+    desc: 'Comprehensive safety assessments for 3D printing facilities including material handling, ventilation systems, and fire safety measures for additive manufacturing operations.',
+    longDesc: 'Comprehensive safety assessments for 3D printing facilities including material handling, ventilation systems, and fire safety measures for additive manufacturing operations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787029495/ChatGPT_Image_Aug_18_2026_10_34_40_AM_e4qrvc.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive 3D Printing Facility Safety Assessments Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your 3d printing facility safety assessments systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'robotics-iot-maintenance',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'IoT-Based Predictive Maintenance Inspections', 
+    desc: 'Inspections of IoT-based predictive maintenance systems ensuring proper sensor integration, data collection, and safety compliance for industrial equipment monitoring.',
+    longDesc: 'Inspections of IoT-based predictive maintenance systems ensuring proper sensor integration, data collection, and safety compliance for industrial equipment monitoring.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787029597/ChatGPT_Image_Aug_18_2026_10_36_26_AM_slheyl.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive IoT-Based Predictive Maintenance Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your iot-based predictive maintenance inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-drone-thermographic',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Drone-Based Thermographic Inspections', 
+    desc: 'Advanced drone-based thermographic inspections for solar farms identifying hot spots, module defects, and potential fire hazards in large-scale solar installations.',
+    longDesc: 'Advanced drone-based thermographic inspections for solar farms identifying hot spots, module defects, and potential fire hazards in large-scale solar installations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786946281/ChatGPT_Image_Aug_17_2026_11_27_37_AM_k27qtz.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Drone-Based Thermographic Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your drone-based thermographic inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-wind-turbine',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Wind Turbine Blade Integrity Inspections', 
+    desc: 'Comprehensive inspections of wind turbine blades for structural integrity, surface damage, and lightning protection ensuring optimal performance and safety.',
+    longDesc: 'Comprehensive inspections of wind turbine blades for structural integrity, surface damage, and lightning protection ensuring optimal performance and safety.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786946501/ChatGPT_Image_Aug_17_2026_11_31_29_AM_ivxxe3.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Wind Turbine Blade Integrity Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your wind turbine blade integrity inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-floating-plant',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Floating Solar Plant Safety Checks', 
+    desc: 'Stability and electrical safety inspections for floating solar plants including mooring systems, electrical connections, and environmental impact assessments.',
+    longDesc: 'Stability and electrical safety inspections for floating solar plants including mooring systems, electrical connections, and environmental impact assessments.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786948674/ChatGPT_Image_Aug_17_2026_12_07_26_PM_muvoej.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Floating Solar Plant Safety Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your floating solar plants meet the highest safety and performance standards. We provide comprehensive audits for floating solar installations, including structural stability, electrical safety, mooring systems, and environmental compliance to maximize efficiency and ensure long-term reliability.',
+      subServices: [
+        { title: 'Structural Stability Assessments', desc: 'Comprehensive evaluation of floating platform integrity, buoyancy systems, and structural connections ensuring safe operation in water environments. We assess material degradation, corrosion protection, and load-bearing capacity.', link: '#' },
+        { title: 'Mooring System Inspections', desc: 'Detailed inspections of anchoring and mooring systems including cable integrity, anchor point assessments, and tension verification to ensure secure installation and prevent drift or damage.', link: '#' },
+        { title: 'Electrical Safety Audits', desc: 'Comprehensive electrical safety inspections including underwater cable integrity, junction box sealing, grounding systems, and protection against water ingress ensuring safe electrical operation.', link: '#' },
+        { title: 'Environmental Impact Assessments', desc: 'Evaluation of environmental impact including water quality monitoring, aquatic ecosystem protection, and compliance with environmental regulations for floating solar installations.', link: '#' },
+        { title: 'Performance & Efficiency Analysis', desc: 'Assessment of solar panel performance, energy output optimization, and system efficiency to maximize power generation and identify maintenance requirements.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'IEC Standards Compliance', desc: 'Certified inspection processes following international floating solar and marine safety standards' },
+        { title: 'Advanced Technology', desc: 'State-of-the-art underwater inspection and structural analysis technology for comprehensive assessments' },
+        { title: 'Expert Marine & Solar Engineers', desc: 'Certified professionals with extensive floating solar and marine engineering expertise' },
+        { title: 'Long-Term Reliability', desc: 'Detailed reports with recommendations to ensure structural integrity and optimal performance over time' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-inverter-storage',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Inverter & Storage System Fire-Safety Audits', 
+    desc: 'Fire-safety audits for solar inverters and energy storage systems ensuring proper installation, thermal management, and compliance with fire safety standards.',
+    longDesc: 'Fire-safety audits for solar inverters and energy storage systems ensuring proper installation, thermal management, and compliance with fire safety standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786948959/ChatGPT_Image_Aug_17_2026_12_12_08_PM_u4soke.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Inverter & Storage System Fire-Safety Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your inverter & storage system fire-safety audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'solar-smart-metering',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Smart Metering System Accuracy Inspections', 
+    desc: 'Accuracy and compliance inspections for smart metering systems ensuring proper calibration, data integrity, and regulatory compliance for renewable energy monitoring.',
+    longDesc: 'Accuracy and compliance inspections for smart metering systems ensuring proper calibration, data integrity, and regulatory compliance for renewable energy monitoring.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786949167/ChatGPT_Image_Aug_17_2026_12_15_50_PM_eaxapc.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Smart Metering System Accuracy Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your smart metering system accuracy inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-fiber-optic',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Smart Fiber-Optic Perimeter Inspections', 
+    desc: 'Comprehensive inspections of fiber-optic perimeter detection systems ensuring proper installation, sensitivity calibration, and reliable intrusion detection.',
+    longDesc: 'Comprehensive inspections of fiber-optic perimeter detection systems ensuring proper installation, sensitivity calibration, and reliable intrusion detection.',
+    img: '/smart.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Smart Fiber-Optic Perimeter Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your smart fiber-optic perimeter inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-drone-surveillance',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Drone-Based Perimeter Surveillance Validation', 
+    desc: 'Validation of drone-based perimeter surveillance systems ensuring proper coverage, detection capabilities, and integration with security command centers.',
+    longDesc: 'Validation of drone-based perimeter surveillance systems ensuring proper coverage, detection capabilities, and integration with security command centers.',
+    img: '/drone.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Drone-Based Perimeter Surveillance Validation Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your drone-based perimeter surveillance validation systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-cybersecurity',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Command-and-Control System Cybersecurity Audits', 
+    desc: 'Cybersecurity audits for perimeter security command-and-control systems ensuring protection against cyber threats and secure data transmission.',
+    longDesc: 'Cybersecurity audits for perimeter security command-and-control systems ensuring protection against cyber threats and secure data transmission.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786949904/ChatGPT_Image_Aug_17_2026_12_28_08_PM_szigfb.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Command-and-Control System Cybersecurity Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your command-and-control system cybersecurity audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-biometric-access',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Biometric & Access Control Compliance Verification', 
+    desc: 'Compliance verification for biometric and access control systems ensuring proper authentication, data privacy, and integration with perimeter security systems.',
+    longDesc: 'Compliance verification for biometric and access control systems ensuring proper authentication, data privacy, and integration with perimeter security systems.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786949407/ChatGPT_Image_Aug_17_2026_12_19_31_PM_uh5eso.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Biometric & Access Control Compliance Verification Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your biometric & access control compliance verification systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'perimeter-critical-infrastructure',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Critical Infrastructure Protection Reviews', 
+    desc: 'Comprehensive protection reviews for critical infrastructure perimeters including airports, power plants, and government facilities ensuring multi-layered security.',
+    longDesc: 'Comprehensive protection reviews for critical infrastructure perimeters including airports, power plants, and government facilities ensuring multi-layered security.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786950080/ChatGPT_Image_Aug_17_2026_12_30_52_PM_mbks66.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Critical Infrastructure Protection Reviews Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your critical infrastructure protection reviews systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-ai-analytics',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'AI-Based Video Analytics Audits', 
+    desc: 'Comprehensive audits of AI-based video analytics systems ensuring accurate detection, proper algorithm configuration, and compliance with privacy regulations.',
+    longDesc: 'Comprehensive audits of AI-based video analytics systems ensuring accurate detection, proper algorithm configuration, and compliance with privacy regulations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028162/ChatGPT_Image_Aug_18_2026_10_12_32_AM_e90uty.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive AI-Based Video Analytics Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your ai-based video analytics audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-ip-network-security',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Cybersecurity Inspections for IP-Based CCTV Networks', 
+    desc: 'Cybersecurity inspections for IP-based CCTV networks ensuring proper network segmentation, encryption, and protection against unauthorized access.',
+    longDesc: 'Cybersecurity inspections for IP-based CCTV networks ensuring proper network segmentation, encryption, and protection against unauthorized access.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028299/ChatGPT_Image_Aug_18_2026_10_14_38_AM_rskazs.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Cybersecurity Inspections for IP-Based CCTV Networks Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your cybersecurity inspections for ip-based cctv networks systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-thermal-imaging',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Thermal Imaging CCTV Functionality Checks', 
+    desc: 'Functionality checks for thermal imaging CCTV systems ensuring proper calibration, detection range, and integration with standard surveillance systems.',
+    longDesc: 'Functionality checks for thermal imaging CCTV systems ensuring proper calibration, detection range, and integration with standard surveillance systems.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028445/ChatGPT_Image_Aug_18_2026_10_17_06_AM_qnyzgm.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Thermal Imaging CCTV Functionality Checks Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your thermal imaging cctv functionality checks systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-drone-integration',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Drone-Camera Integration Inspections', 
+    desc: '',
+    longDesc: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028560/ChatGPT_Image_Aug_18_2026_10_19_05_AM_xjz9fn.png',
+    extendedContent: {
+      detailIntroTitle: '',
+      detailIntroDesc: '',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'cctv-chain-of-custody',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Video Evidence Chain-of-Custody Audits', 
+    desc: 'Chain-of-custody audits for video evidence ensuring proper storage, encryption, and compliance with legal requirements for admissibility in court.',
+    longDesc: 'Chain-of-custody audits for video evidence ensuring proper storage, encryption, and compliance with legal requirements for admissibility in court.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028851/ChatGPT_Image_Aug_18_2026_10_23_54_AM_q08k69.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Video Evidence Chain-of-Custody Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your video evidence chain-of-custody audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-air-quality',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Indoor Air Quality (PM2.5/PM10) Inspections', 
+    desc: 'Comprehensive indoor air quality inspections measuring PM2.5, PM10, and other pollutants ensuring healthy indoor environments and compliance with air quality standards.',
+    longDesc: 'Comprehensive indoor air quality inspections measuring PM2.5, PM10, and other pollutants ensuring healthy indoor environments and compliance with air quality standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026039/ChatGPT_Image_Aug_18_2026_09_36_21_AM_wemtnm.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Indoor Air Quality (PM2.5/PM10) Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your indoor air quality (pm2.5/pm10) inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-iot-safety',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Smart Building IoT System Safety Audits', 
+    desc: 'Safety audits for smart building IoT systems ensuring proper sensor integration, data security, and safe operation of connected building management systems.',
+    longDesc: 'Safety audits for smart building IoT systems ensuring proper sensor integration, data security, and safe operation of connected building management systems.',
+    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Smart Building IoT System Safety Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your smart building iot system safety audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following international safety and compliance standards' },
+        { title: 'Advanced Testing Equipment', desc: 'State-of-the-art diagnostic tools and testing equipment for comprehensive assessments' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive industry expertise and technical knowledge' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed reports with actionable recommendations to ensure safety and compliance' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-green-energy',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Green Building Energy Efficiency Assessments', 
+    desc: 'Energy efficiency assessments for green buildings evaluating HVAC systems, lighting, insulation, and renewable energy integration for optimal sustainability.',
+    longDesc: 'Energy efficiency assessments for green buildings evaluating HVAC systems, lighting, insulation, and renewable energy integration for optimal sustainability.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026265/ChatGPT_Image_Aug_18_2026_09_40_51_AM_cdt20i.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Green Building Energy Efficiency Assessments Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your green building energy efficiency assessments systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-acoustic-lighting',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Acoustic & Lighting Comfort Audits', 
+    desc: 'Comprehensive audits of acoustic and lighting systems ensuring optimal comfort levels, noise reduction, and proper illumination for occupant well-being.',
+    longDesc: 'Comprehensive audits of acoustic and lighting systems ensuring optimal comfort levels, noise reduction, and proper illumination for occupant well-being.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026404/ChatGPT_Image_Aug_18_2026_09_43_06_AM_ekihos.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Acoustic & Lighting Comfort Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your acoustic & lighting comfort audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following international safety and compliance standards' },
+        { title: 'Advanced Testing Equipment', desc: 'State-of-the-art diagnostic tools and testing equipment for comprehensive assessments' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive industry expertise and technical knowledge' },
+        { title: 'Comprehensive Reporting', desc: 'Detailed reports with actionable recommendations to ensure safety and compliance' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'building-human-centric-lighting',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Human-Centric Lighting System Evaluations', 
+    desc: 'Evaluations of human-centric lighting systems ensuring proper circadian rhythm support, color temperature control, and integration with building automation.',
+    longDesc: 'Evaluations of human-centric lighting systems ensuring proper circadian rhythm support, color temperature control, and integration with building automation.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026637/ChatGPT_Image_Aug_18_2026_09_47_10_AM_oimh8x.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Human-Centric Lighting System Evaluations Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your human-centric lighting system evaluations systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-airport-security',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Airport Security & Safety Inspections', 
+    desc: 'Comprehensive security and safety inspections for airports including perimeter security, access control, and critical systems ensuring operational reliability and compliance.',
+    longDesc: 'Comprehensive security and safety inspections for airports including perimeter security, access control, and critical systems ensuring operational reliability and compliance.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026802/ChatGPT_Image_Aug_18_2026_09_49_39_AM_ngqsta.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Airport Security & Safety Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your airport security & safety inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-railway-signaling',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Railway Signaling System Inspections', 
+    desc: 'Safety inspections for railway signaling systems ensuring proper operation, redundancy, and compliance with railway safety standards for passenger and freight transport.',
+    longDesc: 'Safety inspections for railway signaling systems ensuring proper operation, redundancy, and compliance with railway safety standards for passenger and freight transport.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787026958/ChatGPT_Image_Aug_18_2026_09_52_24_AM_x2kuf3.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Railway Signaling System Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your railway signaling system inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-port-marine',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Port & Marine Infrastructure Safety Audits', 
+    desc: 'Safety audits for port and marine infrastructure including cargo handling systems, navigation aids, and emergency response systems ensuring maritime safety.',
+    longDesc: 'Safety audits for port and marine infrastructure including cargo handling systems, navigation aids, and emergency response systems ensuring maritime safety.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027087/ChatGPT_Image_Aug_18_2026_09_54_37_AM_v6lup6.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Port & Marine Infrastructure Safety Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your port & marine infrastructure safety audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-nuclear-perimeter',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Nuclear Facility Perimeter Security Inspections', 
+    desc: 'Comprehensive perimeter security inspections for nuclear facilities ensuring multi-layered protection, access control, and compliance with nuclear safety regulations.',
+    longDesc: 'Comprehensive perimeter security inspections for nuclear facilities ensuring multi-layered protection, access control, and compliance with nuclear safety regulations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027212/ChatGPT_Image_Aug_18_2026_09_56_33_AM_k2xm3v.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Nuclear Facility Perimeter Security Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your nuclear facility perimeter security inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'critical-smart-city',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Smart City Infrastructure Inspections', 
+    desc: 'Integrated inspections for smart city infrastructure including traffic management, public safety systems, and IoT networks ensuring efficient and safe urban operations.',
+    longDesc: 'Integrated inspections for smart city infrastructure including traffic management, public safety systems, and IoT networks ensuring efficient and safe urban operations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027316/ChatGPT_Image_Aug_18_2026_09_58_21_AM_i3zmtk.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Smart City Infrastructure Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your smart city infrastructure inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-fire-detection',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Fire Detection System Inspections', 
+    desc: 'Comprehensive inspections of fire detection and alarm systems ensuring proper sensor placement, functionality, and integration with emergency response systems.',
+    longDesc: 'Comprehensive inspections of fire detection and alarm systems ensuring proper sensor placement, functionality, and integration with emergency response systems.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786950322/ChatGPT_Image_Aug_17_2026_12_35_11_PM_yimyzb.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Fire Detection System Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your fire detection system inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-radiation-safety',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Radiation Safety Inspections', 
+    desc: 'Radiation safety inspections for facilities using radioactive materials ensuring proper shielding, monitoring, and compliance with radiation safety regulations.',
+    longDesc: 'Radiation safety inspections for facilities using radioactive materials ensuring proper shielding, monitoring, and compliance with radiation safety regulations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786958016/ChatGPT_Image_Aug_17_2026_02_43_18_PM_ec6yye.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Radiation Safety Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your radiation safety inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-water-quality',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Water Quality Inspections', 
+    desc: 'Water quality inspections for industrial and municipal facilities ensuring compliance with water quality standards and proper treatment system operation.',
+    longDesc: 'Water quality inspections for industrial and municipal facilities ensuring compliance with water quality standards and proper treatment system operation.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786958284/ChatGPT_Image_Aug_17_2026_02_47_44_PM_joir70.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Water Quality Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your water quality inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-emr-emf',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'EMR/EMF Safety Assessments', 
+    desc: 'Electromagnetic radiation and field safety assessments ensuring exposure levels are within safe limits and compliance with international EMR/EMF guidelines.',
+    longDesc: 'Electromagnetic radiation and field safety assessments ensuring exposure levels are within safe limits and compliance with international EMR/EMF guidelines.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786958682/ChatGPT_Image_Aug_17_2026_02_54_13_PM_ullcky.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive EMR/EMF Safety Assessments Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your emr/emf safety assessments systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'environment-drone-compliance',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Drone-Based Environmental Compliance Monitoring', 
+    desc: 'Drone-based monitoring for environmental compliance including air quality, emissions, and site inspections ensuring adherence to environmental regulations.',
+    longDesc: 'Drone-based monitoring for environmental compliance including air quality, emissions, and site inspections ensuring adherence to environmental regulations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1786957705/ChatGPT_Image_Aug_17_2026_02_38_06_PM_dqujze.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Drone-Based Environmental Compliance Monitoring Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your drone-based environmental compliance monitoring systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'hightech-industry4',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Industry 4.0 System Inspections', 
+    desc: 'Comprehensive inspections for Industry 4.0 systems including cyber-physical systems, IoT integration, and digital twin implementations ensuring safe and efficient operations.',
+    longDesc: 'Comprehensive inspections for Industry 4.0 systems including cyber-physical systems, IoT integration, and digital twin implementations ensuring safe and efficient operations.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027428/ChatGPT_Image_Aug_18_2026_10_00_13_AM_c0uqyh.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Industry 4.0 System Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your industry 4.0 system inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'hightech-ev-charging',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'EV Charging Infrastructure Inspections', 
+    desc: 'Safety and compliance inspections for electric vehicle charging infrastructure ensuring proper installation, electrical safety, and grid integration.',
+    longDesc: 'Safety and compliance inspections for electric vehicle charging infrastructure ensuring proper installation, electrical safety, and grid integration.',
+    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive EV Charging Infrastructure Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your ev charging infrastructure inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'hightech-hydrogen-fueling',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Hydrogen Fueling Station Safety Inspections', 
+    desc: 'Critical safety inspections for hydrogen fueling stations ensuring proper storage, dispensing systems, and compliance with hydrogen safety standards.',
+    longDesc: 'Critical safety inspections for hydrogen fueling stations ensuring proper storage, dispensing systems, and compliance with hydrogen safety standards.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027667/ChatGPT_Image_Aug_18_2026_10_04_12_AM_ca4hjg.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Hydrogen Fueling Station Safety Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your hydrogen fueling station safety inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'hightech-ai-predictive',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'AI Predictive Maintenance System Audits', 
+    desc: 'Audits of AI-based predictive maintenance systems ensuring accurate predictions, proper sensor integration, and safe operation of maintenance algorithms.',
+    longDesc: 'Audits of AI-based predictive maintenance systems ensuring accurate predictions, proper sensor integration, and safe operation of maintenance algorithms.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787027781/ChatGPT_Image_Aug_18_2026_10_06_06_AM_vgfjhu.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive AI Predictive Maintenance System Audits Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your ai predictive maintenance system audits systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  },
+  { 
+    id: 'hightech-cyber-physical',
+    isMain: false,
+    icon: <Settings size={32} strokeWidth={1.5} />, 
+    title: 'Cyber-Physical System Security Inspections', 
+    desc: 'Security inspections for cyber-physical systems ensuring proper integration of physical and digital components with robust cybersecurity measures.',
+    longDesc: 'Security inspections for cyber-physical systems ensuring proper integration of physical and digital components with robust cybersecurity measures.',
+    img: 'https://res.cloudinary.com/didtfhfme/image/upload/v1787028048/ChatGPT_Image_Aug_18_2026_10_09_57_AM_mhh0zh.png',
+    extendedContent: {
+      detailIntroTitle: 'Comprehensive Cyber-Physical System Security Inspections Inspection Services',
+      detailIntroDesc: 'Our specialized inspection services ensure your cyber-physical system security inspections systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      subServices: [
+        { title: 'Comprehensive System Assessment', desc: 'Thorough evaluation of system components, configuration, and operational parameters to understand current performance and identify improvement opportunities.', link: '#' },
+        { title: 'Safety Verification', desc: 'Assessment of safety measures, compliance with safety standards, and identification of potential hazards or risks.', link: '#' },
+        { title: 'Performance Testing', desc: 'Functional testing and performance evaluation to verify system operation meets design specifications and operational requirements.', link: '#' },
+        { title: 'Compliance Review', desc: 'Review of compliance with relevant standards, regulations, and industry best practices.', link: '#' },
+        { title: 'Detailed Reporting', desc: 'Comprehensive inspection reports with photographic evidence, findings, recommendations, and support for regulatory submissions.', link: '#' }
+      ],
+      whyChooseUs: [
+        { title: 'International Standards Compliance', desc: 'Certified inspection processes following IEC, ISO, IEEE, and local regulatory standards' },
+        { title: 'Fast & Non-Intrusive Audits', desc: 'State-of-the-art diagnostic technology ensuring thorough inspection with minimal operational downtime' },
+        { title: 'Expert Certified Engineers', desc: 'Certified professionals with extensive domain expertise across industrial categories' },
+        { title: 'Comprehensive Regulatory Documentation', desc: 'Detailed inspection reports with photographic evidence, findings, and support for regulatory submissions' }
+      ],
+      overview: 'Our specialized inspection services ensure your systems meet the highest safety and performance standards. We provide comprehensive audits to ensure safe and efficient operation and compliance with international standards.',
+      keyInspectionAreas: 'International standards (IEC, ISO, IEEE), national codes (IS/IEC standards), local regulatory requirements, industry best practices, and facility-specific protocols.',
+      scopeOfInspection: 'Documentation review (design drawings, specifications, certificates), visual inspection of systems and equipment, functional testing and verification, compliance assessment, safety evaluation, risk identification, and corrective action recommendations.',
+      keyTests: 'Functional testing, performance measurements, safety system verification, compliance testing, quality assurance checks, operational testing, and system integration verification.',
+      qualityIssues: 'Common nonconformities include improper installation, non-compliance with standards, missing documentation, inadequate safety measures, poor maintenance, insufficient quality controls, and regulatory violations.',
+      riskAndSafetyIssues: 'Primary risks include system failures, safety hazards, non-compliance resulting in regulatory penalties, operational disruptions, equipment damage, and reduced reliability. Safety controls focus on proper installation, adequate safety measures, compliance with standards, regular maintenance, and operator training.',
+      complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
+    }
+  }
+];
+
+export const mainServiceIds = [
+  'explosion-hazardous', 'advanced-electrical', 'machinery-robotics', 
+  'solar-renewable', 'perimeter-security', 'cctv-surveillance', 
+  'building-health', 'critical-infrastructure', 'environment-safety', 'high-tech'
+];

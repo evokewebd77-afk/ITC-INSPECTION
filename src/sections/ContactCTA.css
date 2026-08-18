@@ -1,0 +1,283 @@
+.contact-cta-section {
+  background: linear-gradient(170deg, #043781 0%, #062d5e 40%, #04275a 100%);
+  padding: 7rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(5, 158, 246, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.contact-cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -15%; left: -8%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(5, 158, 246, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Two Column Layout */
+.cta-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT SIDE */
+.cta-left {
+  padding-top: 1rem;
+}
+
+.cta-headline {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.cta-subtext {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+/* Contact Info List */
+.cta-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.cta-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: all 0.35s ease;
+}
+
+.cta-info-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateX(6px);
+}
+
+.cta-info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.cta-info-item:hover .cta-info-icon {
+  transform: scale(1.1);
+}
+
+.call-icon { background: linear-gradient(135deg, #25D366, #128C7E); color: white; box-shadow: 0 8px 20px rgba(37,211,102,0.2); }
+.email-icon { background: linear-gradient(135deg, #059ef6, #0056b3); color: white; box-shadow: 0 8px 20px rgba(5,158,246,0.2); }
+.visit-icon { background: linear-gradient(135deg, #FF6B35, #e8532e); color: white; box-shadow: 0 8px 20px rgba(255,107,53,0.2); }
+
+.cta-info-item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.2rem;
+}
+
+.cta-info-highlight {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.cta-info-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+/* Trust Badges */
+.cta-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+}
+
+.cta-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cta-trust-badge svg {
+  color: #25D366;
+  flex-shrink: 0;
+}
+
+/* RIGHT SIDE — Form Card */
+.cta-right {
+  position: relative;
+}
+
+.cta-form-card {
+  background: white;
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.cta-form-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.cta-form-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.cta-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cta-form-group {
+  margin-bottom: 1rem;
+}
+
+.cta-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.cta-form-group input,
+.cta-form-group select,
+.cta-form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.cta-form-group input:focus,
+.cta-form-group select:focus,
+.cta-form-group textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(5, 158, 246, 0.1);
+}
+
+.cta-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 10px 30px rgba(4, 55, 129, 0.2);
+}
+
+.cta-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(4, 55, 129, 0.3);
+}
+
+/* Success State */
+.cta-form-success {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--primary-color);
+}
+
+.cta-form-success svg {
+  color: #25D366;
+  margin-bottom: 1rem;
+}
+
+.cta-form-success h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.cta-form-success p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .cta-two-col {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cta-headline {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-cta-section {
+    padding: 4rem 0 3rem;
+  }
+  .cta-form-row {
+    grid-template-columns: 1fr;
+  }
+  .cta-form-card {
+    padding: 2rem 1.5rem;
+  }
+}
