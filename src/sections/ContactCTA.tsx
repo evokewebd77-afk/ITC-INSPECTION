@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, CheckCircle, Send, Loader2 } from 'lucide-react';
+import { Phone, Mail, CheckCircle, Send, Loader2 } from 'lucide-react';
 import { sendFormToGoogleSheet } from '../utils/submitForm';
 import './ContactCTA.css';
 
@@ -75,14 +75,6 @@ export const ContactCTA: React.FC = () => {
                 </div>
               </a>
 
-              <a href="https://maps.google.com/?q=ITC+India" target="_blank" rel="noopener noreferrer" className="cta-info-item">
-                <div className="cta-info-icon visit-icon"><MapPin size={22} /></div>
-                <div>
-                  <h4>Visit Us</h4>
-                  <p className="cta-info-highlight">ITC India Office</p>
-                  <p className="cta-info-meta">Schedule an in-person consultation</p>
-                </div>
-              </a>
             </div>
 
             {/* Trust Badges */}

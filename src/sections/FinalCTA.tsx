@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { PhoneCall, Mail, MapPin, Zap, CheckCircle, Award } from 'lucide-react';
+import { PhoneCall, Mail, Zap, CheckCircle, Award } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './FinalCTA.css';
 
@@ -48,17 +48,6 @@ export const FinalCTA: React.FC = () => {
             <div className="contact-action">Send Email →</div>
           </a>
 
-          <a href="https://maps.google.com/?q=ITC+India" target="_blank" rel="noopener noreferrer" className="contact-card">
-            <div className="contact-icon-wrapper">
-              <MapPin size={24} color="white" />
-            </div>
-            <div className="contact-details">
-              <h4>Visit Us</h4>
-              <p>ITC India Office</p>
-              <span>Schedule an in-person consultation</span>
-            </div>
-            <div className="contact-action">Get Directions →</div>
-          </a>
         </div>
       </div>
     </section>
