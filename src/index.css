@@ -360,3 +360,13 @@ img {
   border-radius: 0 16px 16px 0;
   margin-bottom: 3rem;
 }
+
+/* Rendering performance optimization for below-the-fold content */
+.services-section,
+.why-choose-us-section,
+.stats-section,
+.testimonials-section,
+.newsletter-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}

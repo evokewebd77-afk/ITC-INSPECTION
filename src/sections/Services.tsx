@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
@@ -32,7 +33,14 @@ export const Services: React.FC = () => {
                 key={index}
               >
                 <div className="premium-image-wrapper">
-                  <img src={service.img} alt={service.title} className="premium-img" />
+                  <Image
+                    src={service.img}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                    className="premium-img"
+                  />
                   <div className="premium-overlay-gradient"></div>
                   <div className="premium-icon-glass">
                     {service.icon}

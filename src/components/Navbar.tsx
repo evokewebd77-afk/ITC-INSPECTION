@@ -2,9 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Menu, X } from 'lucide-react';
-import { QuoteModal } from './QuoteModal';
 import './Navbar.css';
+
+const QuoteModal = dynamic(() => import('./QuoteModal').then((mod) => mod.QuoteModal), {
+  ssr: false,
+});
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +30,14 @@ export const Navbar: React.FC = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link href="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <img src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp" alt="ITC India Logo" height="48" style={{ objectFit: 'contain' }} />
+          <Image
+            src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp"
+            alt="ITC India Logo"
+            width={160}
+            height={48}
+            priority
+            style={{ objectFit: 'contain', width: 'auto', height: '48px' }}
+          />
           <div className="nav-brand-text" style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
             <span className="brand-title" style={{ fontWeight: 700, fontSize: '1.1rem', lineHeight: 1.2 }}>Inspection Services</span>
             <span className="brand-subtitle" style={{ fontSize: '0.75rem' }}>A Division of ITC (India) Pvt. Ltd.</span>

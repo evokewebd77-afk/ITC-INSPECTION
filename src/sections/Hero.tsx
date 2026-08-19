@@ -1,14 +1,22 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
 export const Hero: React.FC = () => {
   return (
     <section id="home" className="hero-cinematic">
-      <div className="hero-bg-image" style={{ backgroundImage: "url('/itc.png')" }}></div>
+      <Image
+        src="/itc.png"
+        alt="ITC Inspection Background"
+        priority
+        fill
+        sizes="100vw"
+        quality={85}
+        style={{ objectFit: 'cover' }}
+        className="hero-bg-image"
+      />
       <div className="hero-bg-overlay"></div>
       
       <div className="container hero-container-glass">

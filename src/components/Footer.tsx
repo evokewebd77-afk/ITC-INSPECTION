@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -11,11 +12,12 @@ export const Footer: React.FC = () => {
           
           <div className="footer-brand">
             <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <img 
+              <Image 
                 src="https://res.cloudinary.com/didtfhfme/image/upload/v1779180782/itc_mhm3ld.webp" 
-                alt="ITC India Logo" 
-                height="48" 
-                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)' }} 
+                alt="ITC India Inspection Logo" 
+                width={160}
+                height={48}
+                style={{ objectFit: 'contain', width: 'auto', height: '48px', filter: 'brightness(0) invert(1)' }} 
               />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <span className="footer-brand-title">Inspection Services</span>
