@@ -304,7 +304,7 @@ export const servicesData = [
   },
   { 
     id: 'high-tech',
-    isMain: true,
+    isMain: false,
     icon: <Zap size={32} strokeWidth={1.5} />, 
     title: 'High-Tech & Future-Ready Areas', 
     desc: 'Ensuring safety in next-generation technologies including EV charging stations, hydrogen fueling, Industry 4.0 systems, cyber-physical integration, and AI-driven predictive assessments.',
@@ -1990,5 +1990,5 @@ export const servicesData = [
 export const mainServiceIds = [
   'explosion-hazardous', 'advanced-electrical', 'machinery-robotics', 
   'solar-renewable', 'perimeter-security', 'cctv-surveillance', 
-  'building-health', 'critical-infrastructure', 'environment-safety', 'high-tech'
+  'building-health', 'critical-infrastructure', 'environment-safety'
 ];
