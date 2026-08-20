@@ -1,0 +1,159 @@
+/* Quote Modal Styles */
+
+.quote-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(2, 26, 62, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4vh 1rem;
+  animation: fadeIn 0.3s ease;
+  overflow-y: auto;
+}
+
+.quote-modal-container {
+  background: white;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+  margin: auto 0;
+}
+
+.quote-modal-body {
+  padding: 3rem 2.5rem;
+}
+
+.quote-modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.quote-modal-close-btn:hover {
+  background: #e2e8f0;
+}
+
+.quote-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.quote-form-field {
+  margin-bottom: 1rem;
+}
+
+.quote-form-label {
+  display: block;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.quote-form-input,
+.quote-form-select,
+.quote-form-textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.quote-form-input:focus,
+.quote-form-select:focus,
+.quote-form-textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(5, 158, 246, 0.15);
+}
+
+.quote-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--secondary-color);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(5, 158, 246, 0.3);
+  margin-top: 0.5rem;
+}
+
+.quote-submit-btn:hover {
+  background: var(--secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(5, 158, 246, 0.4);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .quote-modal-backdrop {
+    padding: 2vh 0.75rem !important;
+  }
+
+  .quote-modal-container {
+    border-radius: 20px !important;
+    max-height: 92vh !important;
+  }
+
+  .quote-modal-body {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .quote-modal-close-btn {
+    top: 0.85rem !important;
+    right: 0.85rem !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .quote-modal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .quote-form-input,
+  .quote-form-select,
+  .quote-form-textarea {
+    font-size: 16px !important;
+    padding: 0.85rem 0.9rem !important;
+  }
+
+  .quote-submit-btn {
+    padding: 0.95rem !important;
+    font-size: 1.05rem !important;
+  }
+}
