@@ -35,12 +35,12 @@ export const ServiceDetailPage: React.FC = () => {
     <main style={{ paddingTop: '80px', backgroundColor: 'var(--bg-main)', minHeight: '100vh' }}>
       
       {/* Dynamic Page Header */}
-      <section style={{ 
+      <section className="service-hero-header" style={{ 
         position: 'relative', 
-        padding: '6rem 0 5rem 0', 
+        padding: '6rem 0 4rem 0', 
         color: 'white', 
         overflow: 'hidden',
-        minHeight: '400px',
+        minHeight: '420px',
         display: 'flex',
         alignItems: 'center'
       }}>
@@ -57,23 +57,23 @@ export const ServiceDetailPage: React.FC = () => {
           />
         </div>
 
-        {/* Gradient Overlay to enhance background image visibility */}
-        <div style={{
+        {/* Soft Gradient Overlay */}
+        <div className="service-hero-overlay" style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
-          background: 'linear-gradient(180deg, rgba(4, 25, 55, 0.45) 0%, rgba(2, 16, 38, 0.75) 100%)',
+          background: 'linear-gradient(180deg, rgba(4, 20, 45, 0.35) 0%, rgba(2, 12, 30, 0.65) 100%)',
           zIndex: 1
         }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)', textDecoration: 'none', marginBottom: '1.5rem', fontWeight: 700 }}>
+          <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)', textDecoration: 'none', marginBottom: '1.25rem', fontWeight: 700 }}>
             <ArrowLeft size={20} /> Back to Services
           </Link>
           
-          <div style={{ 
-            background: 'rgba(8, 25, 52, 0.72)', 
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)', 
+          <div className="service-hero-card" style={{ 
+            background: 'rgba(8, 25, 52, 0.65)', 
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)', 
             padding: 'clamp(1.25rem, 3vw, 2.25rem)', 
             borderRadius: '24px', 
             maxWidth: '850px', 
