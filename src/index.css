@@ -433,4 +433,23 @@ img {
     justify-items: center !important;
     gap: 1.5rem !important;
   }
+
+  /* Contact Page Mobile Form Stacking */
+  .contact-page-card {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: 20px !important;
+  }
+
+  .contact-page-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .contact-page-input,
+  .contact-page-select,
+  .contact-page-textarea {
+    font-size: 16px !important;
+    padding: 0.85rem 0.9rem !important;
+  }
 }

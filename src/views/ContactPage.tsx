@@ -158,9 +158,9 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Contact Form (Right Column) */}
-            <div style={{ background: 'white', borderRadius: '30px', padding: '3.5rem', border: '1px solid rgba(4, 55, 129, 0.05)', boxShadow: '0 25px 50px rgba(4, 55, 129, 0.08)' }}>
-              <h3 style={{ fontSize: '2rem', color: 'var(--primary-color)', marginBottom: '0.5rem', fontWeight: 800 }}>Request a Quote</h3>
-              <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', fontSize: '1.05rem' }}>
+            <div className="contact-page-card" style={{ background: 'white', borderRadius: '30px', padding: '3.5rem', border: '1px solid rgba(4, 55, 129, 0.05)', boxShadow: '0 25px 50px rgba(4, 55, 129, 0.08)' }}>
+              <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', color: 'var(--primary-color)', marginBottom: '0.5rem', fontWeight: 800 }}>Request a Quote</h3>
+              <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1rem' }}>
                 Fill out the form below and we'll get back to you with a customized quote.
               </p>
 
@@ -172,34 +172,34 @@ export const ContactPage: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  {/* 2-Column Row */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  {/* Form Grid Row 1 */}
+                  <div className="contact-page-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
                     <div>
-                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Full Name *</label>
-                      <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="Enter your full name" required />
+                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Full Name *</label>
+                      <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} className="contact-page-input" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="Full Name" required />
                     </div>
                     <div>
-                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Company Name *</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="Enter your company name" required />
+                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Company Name *</label>
+                      <input type="text" name="company" value={formData.company} onChange={handleChange} className="contact-page-input" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="Company Name" required />
                     </div>
                   </div>
 
-                  {/* 2-Column Row */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  {/* Form Grid Row 2 */}
+                  <div className="contact-page-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
                     <div>
-                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Email Address *</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="your.email@company.com" required />
+                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Email Address *</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} className="contact-page-input" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="email@company.com" required />
                     </div>
                     <div>
-                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Phone Number *</label>
-                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="+91 1234567890" required />
+                      <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Phone Number *</label>
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="contact-page-input" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none' }} placeholder="+91 93160 12883" required />
                     </div>
                   </div>
 
                   {/* Dropdown */}
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Service Interest</label>
-                    <select name="service" value={formData.service} onChange={handleChange} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none', color: 'var(--text-main)', cursor: 'pointer' }}>
+                  <div style={{ marginBottom: '1.25rem' }}>
+                    <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Service Interest</label>
+                    <select name="service" value={formData.service} onChange={handleChange} className="contact-page-select" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', outline: 'none', color: 'var(--text-main)', cursor: 'pointer' }}>
                       <option value="" disabled>Select a service category</option>
                       {servicesData.slice(0, 6).map((service, idx) => (
                         <option key={idx} value={service.title}>{service.title}</option>
@@ -209,13 +209,13 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   {/* Textarea */}
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.9rem' }}>Project Details / Requirements</label>
-                    <textarea name="message" value={formData.message} onChange={handleChange} rows={4} style={{ width: '100%', padding: '1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', resize: 'vertical', outline: 'none', fontFamily: 'inherit' }} placeholder="Tell us about your inspection requirements, timeline, or any specific concerns..."></textarea>
+                  <div style={{ marginBottom: '1.25rem' }}>
+                    <label style={{ display: 'block', color: 'var(--text-main)', fontWeight: 600, marginBottom: '0.4rem', fontSize: '0.9rem' }}>Project Details / Requirements</label>
+                    <textarea name="message" value={formData.message} onChange={handleChange} rows={4} className="contact-page-textarea" style={{ width: '100%', padding: '0.9rem 1rem', borderRadius: '12px', border: '1px solid #e2e8f0', background: '#f8fafc', fontSize: '1rem', resize: 'vertical', outline: 'none', fontFamily: 'inherit' }} placeholder="Tell us about your inspection requirements..."></textarea>
                   </div>
 
                   {/* Submit Button */}
-                  <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', padding: '1.25rem', fontSize: '1.15rem', justifyContent: 'center', borderRadius: '16px', fontWeight: 800, opacity: loading ? 0.7 : 1 }}>
+                  <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', padding: '1.1rem', fontSize: '1.1rem', justifyContent: 'center', borderRadius: '16px', fontWeight: 800, opacity: loading ? 0.7 : 1 }}>
                     {loading ? (
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                         <Loader2 size={20} className="animate-spin" /> Submitting...
