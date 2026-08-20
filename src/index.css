@@ -390,24 +390,14 @@ img {
 @media (max-width: 768px) {
   /* Mobile Hero Section & Background Visibility Optimization */
   .service-hero-header {
-    min-height: 480px !important;
+    min-height: 420px !important;
     padding-top: 5rem !important;
-    padding-bottom: 2rem !important;
-    align-items: flex-end !important;
+    padding-bottom: 2.5rem !important;
+    align-items: center !important;
   }
 
   .service-hero-overlay {
-    background: linear-gradient(180deg, rgba(4, 18, 38, 0.25) 0%, rgba(2, 10, 26, 0.6) 100%) !important;
-  }
-
-  .service-hero-card {
-    background: linear-gradient(180deg, rgba(8, 25, 52, 0.55) 0%, rgba(3, 14, 32, 0.72) 100%) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    padding: 1.25rem 1rem !important;
-    border-radius: 20px !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+    background: linear-gradient(180deg, rgba(4, 18, 38, 0.4) 0%, rgba(2, 10, 26, 0.75) 100%) !important;
   }
 
   .service-detail-white-box {

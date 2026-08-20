@@ -66,27 +66,18 @@ export const ServiceDetailPage: React.FC = () => {
         }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)', textDecoration: 'none', marginBottom: '1.25rem', fontWeight: 700 }}>
+          <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.8)', textDecoration: 'none', marginBottom: '1.5rem', fontWeight: 700 }}>
             <ArrowLeft size={20} /> Back to Services
           </Link>
           
-          <div className="service-hero-card" style={{ 
-            background: 'rgba(8, 25, 52, 0.65)', 
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)', 
-            padding: 'clamp(1.25rem, 3vw, 2.25rem)', 
-            borderRadius: '24px', 
-            maxWidth: '850px', 
-            boxShadow: '0 20px 50px rgba(0,0,0,0.4)', 
-            border: '1px solid rgba(255,255,255,0.2)' 
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-              <div style={{ background: 'rgba(5, 158, 246, 0.25)', color: '#ffffff', padding: '0.85rem', borderRadius: '16px', flexShrink: 0 }}>
+          <div style={{ maxWidth: '900px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
+              <div style={{ background: 'rgba(5, 158, 246, 0.3)', backdropFilter: 'blur(10px)', color: '#ffffff', padding: '0.85rem', borderRadius: '16px', flexShrink: 0, boxShadow: '0 4px 15px rgba(0,0,0,0.2)' }}>
                 {service.icon}
               </div>
-              <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', margin: 0, fontWeight: 800, color: '#ffffff' }}>{service.title}</h1>
+              <h1 style={{ fontSize: 'clamp(1.8rem, 5vw, 3.25rem)', margin: 0, fontWeight: 800, color: '#ffffff', textShadow: '0 2px 16px rgba(0,0,0,0.8)' }}>{service.title}</h1>
             </div>
-            <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.2rem)', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.6, margin: 0, fontWeight: 400 }}>
+            <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6, margin: 0, fontWeight: 500, textShadow: '0 2px 12px rgba(0,0,0,0.8)' }}>
               {service.desc}
             </p>
           </div>
