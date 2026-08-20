@@ -95,7 +95,7 @@ export const ServiceDetailPage: React.FC = () => {
           <div className={`reveal-hidden ${isVisible ? 'reveal-visible' : ''}`} style={{ maxWidth: '1000px', margin: '0 auto' }}>
             
             {/* Main Content */}
-            <div style={{ background: 'white', borderRadius: '24px', padding: '3rem', border: '1px solid rgba(4, 55, 129, 0.05)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', marginBottom: '3rem' }}>
+            <div className="service-detail-white-box">
               <h2 style={{ fontSize: '2rem', color: 'var(--primary-color)', marginBottom: '1.5rem', fontWeight: 800, borderBottom: '2px solid #f0f4f8', paddingBottom: '1rem' }}>
                 Service Overview & Scope
               </h2>
@@ -118,7 +118,7 @@ export const ServiceDetailPage: React.FC = () => {
                         Our specialized engineering team delivers rigorous inspection and validation in accordance with international regulatory frameworks:
                       </p>
                       
-                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+                      <div className="subservices-grid">
                         {[
                           'Full Compliance Audit & Verification',
                           'Risk Assessment & Mitigation Strategy',
@@ -146,7 +146,7 @@ export const ServiceDetailPage: React.FC = () => {
                       We provide specialized inspection sub-categories tailored to your specific industry requirements:
                     </p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div className="subservices-grid">
                       {subServices.map((sub: any, i: number) => {
                         const hasRealLink = sub.link && sub.link !== '#' && sub.link !== `/services/${id}`;
                         const targetId = hasRealLink ? sub.link.replace('/services/', '') : null;
