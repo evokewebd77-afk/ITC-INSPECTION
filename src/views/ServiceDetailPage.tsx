@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowRight, CheckCircle, Target, Search, Beaker, AlertTriangle, ShieldAlert, Award, Phone, Mail } from 'lucide-react';
 import { servicesData } from '../data/services';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
@@ -43,15 +44,18 @@ export const ServiceDetailPage: React.FC = () => {
         display: 'flex',
         alignItems: 'center'
       }}>
-        {/* Background Image */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `url(${service.img})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 30%',
-          zIndex: 0
-        }}></div>
+        {/* Background Image - Next.js Optimized WebP */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}>
+          <Image
+            src={service.img}
+            alt={service.title}
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+          />
+        </div>
 
         {/* Gradient Overlay to enhance background image visibility */}
         <div style={{

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Phone, Mail, MapPin, CheckCircle, Clock, Loader2 } from 'lucide-react';
 import { servicesData } from '../data/services';
@@ -65,14 +66,17 @@ export const ContactPage: React.FC = () => {
         alignItems: 'center'
       }}>
         {/* Background Image & Overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `url('https://res.cloudinary.com/didtfhfme/image/upload/v1786439430/ChatGPT_Image_Aug_11_2026_02_40_06_PM_bbui4d.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0
-        }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}>
+          <Image
+            src="https://res.cloudinary.com/didtfhfme/image/upload/f_auto,q_auto,w_1400/v1786439430/ChatGPT_Image_Aug_11_2026_02_40_06_PM_bbui4d.png"
+            alt="Contact ITC India"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,

@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Search, Activity, BarChart, CheckCircle } from 'lucide-react';
 import { servicesData, mainServiceIds } from '../data/services';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
@@ -20,7 +21,7 @@ export const ServicesPage: React.FC = () => {
   return (
     <main style={{ paddingTop: '80px', backgroundColor: 'var(--bg-main)', minHeight: '100vh' }}>
       
-      {/* Premium Hero Section */}
+      {/* Page Header */}
       <section style={{ 
         position: 'relative', 
         padding: '8rem 0', 
@@ -31,14 +32,17 @@ export const ServicesPage: React.FC = () => {
         alignItems: 'center'
       }}>
         {/* Background Image & Overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `url('https://res.cloudinary.com/didtfhfme/image/upload/v1786438910/ChatGPT_Image_Aug_11_2026_02_31_28_PM_yjrztd.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0
-        }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}>
+          <Image
+            src="https://res.cloudinary.com/didtfhfme/image/upload/f_auto,q_auto,w_1400/v1786438910/ChatGPT_Image_Aug_11_2026_02_31_28_PM_yjrztd.png"
+            alt="Our Inspection Services"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
@@ -77,7 +81,15 @@ export const ServicesPage: React.FC = () => {
             {mainServices.map((service, index) => (
               <Link href={`/services/${service.id}`} className="premium-service-card" key={index}>
                 <div className="premium-image-wrapper">
-                  <img src={service.img} alt={service.title} className="premium-img" />
+                  <Image
+                    src={service.img}
+                    alt={service.title}
+                    fill
+                    quality={75}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                    className="premium-img"
+                  />
                   <div className="premium-overlay-gradient"></div>
                   <div className="premium-icon-glass">
                     {React.cloneElement(service.icon as React.ReactElement<any>, { size: 24 })}

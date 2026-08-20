@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ShieldCheck, 
   FileCheck, 
@@ -25,14 +26,17 @@ export const AboutPage: React.FC = () => {
       {/* Page Header */}
       <section className="about-hero">
         {/* Background Image & Overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundImage: `url('https://res.cloudinary.com/didtfhfme/image/upload/v1786428650/ChatGPT_Image_Aug_11_2026_11_40_32_AM_jm7dwi.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          zIndex: 0
-        }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}>
+          <Image
+            src="https://res.cloudinary.com/didtfhfme/image/upload/f_auto,q_auto,w_1400/v1786428650/ChatGPT_Image_Aug_11_2026_11_40_32_AM_jm7dwi.png"
+            alt="About ITC India"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0, bottom: 0,
@@ -54,7 +58,15 @@ export const AboutPage: React.FC = () => {
           {/* Who We Are - Image Left, Text Right */}
           <div className={`reveal-hidden about-who-grid ${isVisible ? 'reveal-visible' : ''}`}>
             <div className="about-img-wrapper" style={{ position: 'relative' }}>
-              <img src="/abot.png" alt="Inspection Professionals" style={{ borderRadius: '24px', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', width: '100%', objectFit: 'cover', minHeight: '300px' }} />
+              <Image 
+                src="/abot.png" 
+                alt="Inspection Professionals" 
+                width={600}
+                height={450}
+                quality={75}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ borderRadius: '24px', boxShadow: '0 30px 60px rgba(0,0,0,0.15)', width: '100%', height: 'auto', objectFit: 'cover', minHeight: '300px' }} 
+              />
               
               {/* Floating Badge */}
               <div className="about-badge-float" style={{ position: 'absolute', bottom: '0', right: '0', background: 'white', padding: '2rem', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '1.5rem', zIndex: 2 }}>

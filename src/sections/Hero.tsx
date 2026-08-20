@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
         priority
         fill
         sizes="100vw"
-        quality={85}
+        quality={75}
         style={{ objectFit: 'cover' }}
         className="hero-bg-image"
       />
