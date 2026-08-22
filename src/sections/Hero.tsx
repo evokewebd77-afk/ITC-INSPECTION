@@ -26,7 +26,8 @@ export const Hero: React.FC = () => {
           </div>
           
           <h1 className="hero-title reveal-text">
-            Trusted Experts in <br /> Inspection, Safety & Compliance
+            Trusted Experts in <br />
+            <span className="hero-highlight">Inspection, Safety & Compliance</span>
           </h1>
           
           <p className="hero-subtitle reveal-text" style={{ animationDelay: '0.1s' }}>
@@ -41,6 +42,15 @@ export const Hero: React.FC = () => {
             <Link href="/contact" className="btn btn-outline-light">
               Request a Quote
             </Link>
+          </div>
+
+          {/* Quick Features Strip */}
+          <div className="hero-trust-strip">
+            <span>✓ ISO 17020 Accredited</span>
+            <span>•</span>
+            <span>✓ Global Compliance</span>
+            <span>•</span>
+            <span>✓ 24/7 Expert Support</span>
           </div>
         </div>
       </div>
