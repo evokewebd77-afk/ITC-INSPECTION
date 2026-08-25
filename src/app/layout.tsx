@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { FloatingActions } from '../components/FloatingActions';
+import { AttributionTracker } from '../components/AttributionTracker';
 import '../index.css';
 import '../App.css';
 
@@ -115,6 +116,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <AttributionTracker />
         <div className="app">
           <Navbar />
           {children}
