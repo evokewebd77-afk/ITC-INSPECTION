@@ -102,3 +102,49 @@ export const trackFormSubmissionEvent = (formName: string, serviceName?: string)
     });
   }
 };
+
+export const getWhatsAppTrackedUrl = (phone: string = '919056544487', customMsg?: string): string => {
+  const attribution = getLeadAttribution();
+  let baseMsg = customMsg || 'Hello ITC India! I am interested in your inspection & certification services.';
+
+  const refInfo: string[] = [];
+  if (attribution.gclid) refInfo.push(`GCLID: ${attribution.gclid}`);
+  if (attribution.utm_source) refInfo.push(`Source: ${attribution.utm_source}`);
+  if (attribution.utm_campaign) refInfo.push(`Campaign: ${attribution.utm_campaign}`);
+
+  if (refInfo.length > 0) {
+    baseMsg += `\n\n[Ref Code: ${refInfo.join(' | ')}]`;
+  }
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(baseMsg)}`;
+};
+
+export const trackClickEvent = (type: 'whatsapp' | 'phone' | 'email', label?: string): void => {
+  if (typeof window === 'undefined') return;
+
+  const attribution = getLeadAttribution();
+
+  // 1. GA4 Event
+  if ((window as any).gtag) {
+    (window as any).gtag('event', `${type}_click`, {
+      event_category: 'Direct Lead Contact',
+      event_label: label || type,
+      gclid: attribution.gclid || '',
+      utm_source: attribution.utm_source || 'Direct',
+      utm_medium: attribution.utm_medium || '',
+      utm_campaign: attribution.utm_campaign || '',
+      value: 1,
+    });
+  }
+
+  // 2. GTM Event
+  if ((window as any).dataLayer) {
+    (window as any).dataLayer.push({
+      event: `${type}_click`,
+      contact_type: type,
+      gclid: attribution.gclid || '',
+      utm_source: attribution.utm_source || '',
+      utm_campaign: attribution.utm_campaign || '',
+    });
+  }
+};

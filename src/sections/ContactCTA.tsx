@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, CheckCircle, Send, Loader2 } from 'lucide-react';
 import { sendFormToGoogleSheet } from '../utils/submitForm';
+import { trackClickEvent } from '../utils/attribution';
 import './ContactCTA.css';
 
 export const ContactCTA: React.FC = () => {
@@ -57,7 +58,7 @@ export const ContactCTA: React.FC = () => {
 
             {/* Contact Info Cards */}
             <div className="cta-info-list">
-              <a href="tel:+919316012883" className="cta-info-item">
+              <a href="tel:+919316012883" className="cta-info-item" onClick={() => trackClickEvent('phone', 'ContactCTA Phone')}>
                 <div className="cta-info-icon call-icon"><Phone size={22} /></div>
                 <div>
                   <h4>Call Us</h4>
@@ -66,7 +67,7 @@ export const ContactCTA: React.FC = () => {
                 </div>
               </a>
 
-              <a href="mailto:info@itcindia.org" className="cta-info-item">
+              <a href="mailto:info@itcindia.org" className="cta-info-item" onClick={() => trackClickEvent('email', 'ContactCTA Email')}>
                 <div className="cta-info-icon email-icon"><Mail size={22} /></div>
                 <div>
                   <h4>Email Us</h4>

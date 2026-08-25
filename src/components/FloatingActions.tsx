@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
+import { getWhatsAppTrackedUrl, trackClickEvent } from '../utils/attribution';
 import './FloatingActions.css';
 
 const WhatsAppIcon = () => (
@@ -12,8 +13,11 @@ const WhatsAppIcon = () => (
 
 export const FloatingActions: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [waUrl, setWaUrl] = useState('https://wa.me/919056544487');
 
   useEffect(() => {
+    setWaUrl(getWhatsAppTrackedUrl('919056544487'));
+
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setIsVisible(true);
@@ -45,9 +49,10 @@ export const FloatingActions: React.FC = () => {
       </button>
 
       <a 
-        href="https://wa.me/919056544487" 
+        href={waUrl} 
         target="_blank" 
         rel="noopener noreferrer" 
+        onClick={() => trackClickEvent('whatsapp', 'Floating Action WhatsApp')}
         className="floating-btn whatsapp-btn"
         aria-label="Chat on WhatsApp"
         title="Chat on WhatsApp"
@@ -57,6 +62,7 @@ export const FloatingActions: React.FC = () => {
 
       <a 
         href="mailto:info@itcindia.org" 
+        onClick={() => trackClickEvent('email', 'Floating Action Email')}
         className="floating-btn mail-btn"
         aria-label="Send us an email"
         title="Send us an email"
