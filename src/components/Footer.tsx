@@ -72,7 +72,13 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="footer-bottom" style={{ justifyContent: 'center' }}>
-          <p>© 2025 ITC India – Inspection Division | Developed by Damnart | All Rights Reserved</p>
+          <p>
+            © 2025 ITC India – Inspection Division | Developed by{' '}
+            <a href="https://digimarketingart.com/" target="_blank" rel="noopener noreferrer">
+              Digital AdvertisementMARKETING NETWORK
+            </a>{' '}
+            | All Rights Reserved
+          </p>
         </div>
       </div>
     </footer>

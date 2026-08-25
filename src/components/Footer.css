@@ -183,6 +183,18 @@
   margin: 0;
 }
 
+.footer-bottom a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .footer-legal-links {
   display: flex;
   gap: 2rem;
