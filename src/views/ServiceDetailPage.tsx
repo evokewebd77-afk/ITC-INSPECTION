@@ -154,8 +154,13 @@ export const ServiceDetailPage: React.FC = () => {
                         if (hasRealLink) {
                           return (
                             <Link key={i} href={cardLink} className="service-feature-card">
-                              <h4 style={{ fontSize: '1.25rem', color: 'var(--primary-color)', marginBottom: '0.75rem', fontWeight: 700 }}>{cardTitle}</h4>
-                              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '1rem' }}>{cardDesc}</p>
+                              <div>
+                                <div className="subservice-card-icon">
+                                  <CheckCircle size={20} />
+                                </div>
+                                <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginBottom: '0.6rem', fontWeight: 700 }}>{cardTitle}</h4>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>{cardDesc}</p>
+                              </div>
                               <div className="learn-more">
                                 Learn More <ArrowRight size={16} />
                               </div>
@@ -165,8 +170,13 @@ export const ServiceDetailPage: React.FC = () => {
 
                         return (
                           <div key={i} className="service-feature-card" style={{ cursor: 'default' }}>
-                            <h4 style={{ fontSize: '1.25rem', color: 'var(--primary-color)', marginBottom: '0.75rem', fontWeight: 700 }}>{cardTitle}</h4>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.6, margin: 0 }}>{cardDesc}</p>
+                            <div>
+                              <div className="subservice-card-icon">
+                                <CheckCircle size={20} />
+                              </div>
+                              <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginBottom: '0.6rem', fontWeight: 700 }}>{cardTitle}</h4>
+                              <p style={{ color: 'var(--text-muted)', fontSize: '0.98rem', lineHeight: 1.6, margin: 0 }}>{cardDesc}</p>
+                            </div>
                           </div>
                         );
                       })}
