@@ -105,7 +105,7 @@ export const trackFormSubmissionEvent = (formName: string, serviceName?: string)
 
 export const getWhatsAppTrackedUrl = (phone: string = '919056544487', customMsg?: string): string => {
   const attribution = getLeadAttribution();
-  let baseMsg = customMsg || 'Hello ITC Inspection Team! I am interested in your inspection & certification services. Please share details.';
+  let baseMsg = customMsg || 'Hello ITC Inspection Team! Thank you for contacting. I am interested in your inspection & certification services. Please share details.';
 
   const refInfo: string[] = [];
   if (attribution.gclid) refInfo.push(`GCLID: ${attribution.gclid}`);

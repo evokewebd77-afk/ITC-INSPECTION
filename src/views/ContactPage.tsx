@@ -27,7 +27,7 @@ export const ContactPage: React.FC = () => {
   // Scroll to top when page loads & set tracked WhatsApp URL
   useEffect(() => {
     window.scrollTo(0, 0);
-    setWaUrl(getWhatsAppTrackedUrl('919056544487', 'Hello ITC Inspection Team! I am interested in your inspection & certification services. Please share details.'));
+    setWaUrl(getWhatsAppTrackedUrl('919056544487', 'Hello ITC Inspection Team! Thank you for contacting. I am interested in your inspection & certification services. Please share details.'));
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
