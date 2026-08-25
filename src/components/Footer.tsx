@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
           <p>
             © 2025 ITC India – Inspection Division | Developed by{' '}
             <a href="https://digimarketingart.com/" target="_blank" rel="noopener noreferrer">
-              Digital AdvertisementMARKETING NETWORK
+              Digital Advertisement Marketing Network
             </a>{' '}
             | All Rights Reserved
           </p>
