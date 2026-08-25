@@ -6,9 +6,11 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Phone, Mail, MapPin, CheckCircle, Clock, Loader2 } from 'lucide-react';
 import { servicesData } from '../data/services';
 import { sendFormToGoogleSheet } from '../utils/submitForm';
+import { getWhatsAppTrackedUrl, trackClickEvent } from '../utils/attribution';
 
 export const ContactPage: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();
+  const [waUrl, setWaUrl] = useState('https://wa.me/919056544487');
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -22,9 +24,10 @@ export const ContactPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  // Scroll to top when page loads
+  // Scroll to top when page loads & set tracked WhatsApp URL
   useEffect(() => {
     window.scrollTo(0, 0);
+    setWaUrl(getWhatsAppTrackedUrl('919056544487', 'Hello ITC India Team! I am interested in your inspection & certification services. Please share details.'));
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -113,8 +116,8 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <h4 style={{ fontSize: '1.2rem', color: 'var(--primary-color)', marginBottom: '0.5rem', fontWeight: 800 }}>Phone Consultation</h4>
                     <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', margin: 0, lineHeight: 1.5 }}>
-                      Direct: <a href="tel:+919316012883" style={{ color: 'var(--secondary-color)', textDecoration: 'none', fontWeight: 600 }}>+91 93160 12883</a><br />
-                      WhatsApp: <a href="https://wa.me/919056544487" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: 600 }}>+91 90565 44487</a>
+                      Direct: <a href="tel:+919316012883" onClick={() => trackClickEvent('phone', 'ContactPage Phone')} style={{ color: 'var(--secondary-color)', textDecoration: 'none', fontWeight: 600 }}>+91 93160 12883</a><br />
+                      WhatsApp: <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackClickEvent('whatsapp', 'ContactPage WhatsApp')} style={{ color: '#25D366', textDecoration: 'none', fontWeight: 600 }}>+91 90565 44487</a>
                     </p>
                   </div>
                 </div>
