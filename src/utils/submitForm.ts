@@ -1,6 +1,6 @@
 import { getLeadAttribution, trackFormSubmissionEvent } from './attribution';
 
-export const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0jul1NB4G06i8Dl3wvbAoljVDKFIcrexSqjwEuzpeUIwTvNAzUOXUHnct4HwCDsvmiw/exec';
+export const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXkQezj575daIWHxk-3_Ve6cf1C6fHHX6BWwDYT5trLAwirjBXpBKJAlAQW-UqJBJ_Tg/exec';
 
 export interface FormDataPayload {
   fullName?: string;
@@ -9,6 +9,8 @@ export interface FormDataPayload {
   phone?: string;
   service?: string;
   message?: string;
+  siteLocation?: string;
+  facilityType?: string;
   formName?: string;
 }
 
@@ -40,6 +42,8 @@ export const sendFormToGoogleSheet = async (data: FormDataPayload): Promise<bool
       phone: data.phone || '',
       service: data.service || '',
       message: data.message || '',
+      siteLocation: data.siteLocation || '',
+      facilityType: data.facilityType || '',
       gclid: attribution.gclid || '',
       fbclid: attribution.fbclid || '',
       utm_source: attribution.utm_source || '',

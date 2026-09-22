@@ -33,6 +33,10 @@ export const seoMetadataMap: Record<string, SEOMetadata> = {
     title: 'ITC Inspection Terms & Conditions | Website Use & Compliance',
     description: 'Explore terms and conditions inspection and assessment services from ITC India, supporting safety, reliability, risk management and applicable compliance.'
   },
+  '/electrical-safety-audit': {
+    title: 'Electrical Safety Audit Services in India | ITC India',
+    description: 'Professional electrical safety audit services for factories, offices, hospitals, schools, residential societies and commercial buildings across India. Request an audit quotation from ITC India.'
+  },
 
   // Service & Sub-service Routes
   'explosion-hazardous': {

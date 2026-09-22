@@ -1,0 +1,1081 @@
+/* Electrical Safety Audit Landing Page Styles */
+
+.esa-container {
+  color: var(--text-main);
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.esa-hero {
+  position: relative;
+  background-image: url('/ee.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 7rem 1.5rem 5rem;
+  overflow: visible;
+}
+
+.esa-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+.esa-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #f8fafc;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 0;
+}
+
+.esa-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.esa-hero-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.esa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0f2fe;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.esa-hero-title {
+  font-size: 2.85rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.esa-hero-desc {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.esa-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.esa-btn-primary {
+  background: var(--secondary-color, #059ef6);
+  color: #ffffff;
+  padding: 0.9rem 1.75rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(5, 158, 246, 0.35);
+}
+
+.esa-btn-primary:hover {
+  background: #0482cb;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(5, 158, 246, 0.45);
+}
+
+.esa-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.esa-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #ffffff;
+}
+
+.esa-btn-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.esa-btn-whatsapp:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+}
+
+.esa-hero-highlights {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Hero Enquiry Form Card */
+.esa-form-card {
+  background: #ffffff;
+  color: var(--text-main);
+  border-radius: 24px;
+  padding: 2.25rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.esa-form-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color, #043781);
+  margin-bottom: 0.4rem;
+}
+
+.esa-form-subtitle {
+  font-size: 0.92rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.esa-form-group {
+  margin-bottom: 1rem;
+}
+
+.esa-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.esa-form-input,
+.esa-form-select,
+.esa-form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+}
+
+.esa-form-input:focus,
+.esa-form-select:focus,
+.esa-form-textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color, #059ef6);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(5, 158, 246, 0.12);
+}
+
+.esa-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.esa-form-submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--primary-color, #043781);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.esa-form-submit-btn:hover {
+  background: #032a65;
+  box-shadow: 0 10px 25px rgba(4, 55, 129, 0.3);
+}
+
+.esa-privacy-note {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Trust Strip */
+.esa-trust-strip {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 3rem 1.5rem;
+  margin-top: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.esa-trust-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.esa-trust-title {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.esa-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.esa-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #f8fafc;
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Section Shared */
+.esa-section {
+  padding: 3.5rem 1.5rem;
+}
+
+.esa-section-white {
+  background: #ffffff;
+}
+
+.esa-section-light {
+  background: #f8fafc;
+}
+
+.esa-service-overview {
+  position: relative;
+  background-image: url('/eee.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.esa-service-overview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 34, 82, 0.45);
+  z-index: 0;
+}
+
+.esa-service-overview::after {
+  display: none;
+}
+
+.esa-service-overview > * {
+  position: relative;
+  z-index: 1;
+}
+
+.esa-service-overview .esa-section-header {
+  max-width: 880px;
+}
+
+.esa-service-overview .esa-section-tag {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-radius: 50px;
+  padding: 0.45rem 1.3rem;
+  color: #7dd3fc;
+  letter-spacing: 0.1em;
+}
+
+.esa-service-overview .esa-section-header::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  margin: 1.75rem auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), #7dd3fc);
+}
+
+.esa-service-overview .esa-section-title {
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.esa-service-overview .esa-section-subtitle {
+  color: #cbd5e1;
+  font-size: 1.08rem;
+}
+
+.esa-service-overview .esa-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.esa-service-overview .esa-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(125, 211, 252, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(125, 211, 252, 0.12);
+}
+
+.esa-service-overview .esa-card-icon {
+  background: rgba(56, 189, 248, 0.18);
+  color: #7dd3fc;
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.2);
+}
+
+.esa-service-overview .esa-card-title {
+  color: #ffffff;
+}
+
+.esa-service-overview .esa-card-desc {
+  color: #cbd5e1;
+}
+
+.esa-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+}
+
+.esa-section-tag {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.esa-section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.esa-section-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* Why Audit Matters — Redesigned (no banner image) */
+.esa-why-section {
+  padding: 0 !important;
+}
+
+.esa-why-body {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.esa-why-head {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.esa-why-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.esa-why-desc {
+  font-size: 1.08rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.esa-why-checks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+
+.esa-why-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.esa-why-check-item:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: rgba(5, 158, 246, 0.35);
+  box-shadow: 0 12px 25px rgba(5, 158, 246, 0.1);
+}
+
+.esa-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.esa-why-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.esa-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.esa-third-party-section {
+  position: relative;
+  background-image: url('/main.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.esa-third-party-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 34, 82, 0.4);
+  z-index: 0;
+}
+
+.esa-third-party-section .esa-section-tag {
+  color: #ffffff;
+}
+
+.esa-third-party-section .esa-section-title {
+  color: #ffffff;
+}
+
+.esa-third-party-section .esa-checklist-item {
+  color: #f1f5f9;
+}
+
+.esa-third-party-section .esa-checklist-item svg {
+  color: #38bdf8 !important;
+}
+
+.esa-third-party-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.esa-pricing-section {
+  position: relative;
+  background-image: url('/sec.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.esa-pricing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 34, 82, 0.55);
+  z-index: 0;
+}
+
+.esa-pricing-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.esa-pricing-section .esa-section-tag {
+  color: #ffffff;
+}
+
+.esa-pricing-section .esa-section-title {
+  color: #ffffff;
+}
+
+.esa-pricing-section .esa-section-subtitle {
+  color: #e2e8f0;
+}
+
+.esa-pricing-body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.esa-pricing-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.esa-pricing-factors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.esa-pricing-factor {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.esa-pricing-factor:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(125, 211, 252, 0.45);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.esa-pricing-factor-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.18);
+  color: #7dd3fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esa-pricing-cta {
+  text-align: center;
+}
+
+.esa-pricing-cta-text {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0 auto 1.5rem;
+  max-width: 600px;
+}
+
+.esa-pricing-note {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  margin: 1rem auto 0;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Cards Grid for Overview */
+.esa-cards-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Facility Cards */
+.esa-facility-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.25rem;
+}
+
+.esa-facility-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.esa-facility-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(5, 158, 246, 0.1);
+  border-color: rgba(5, 158, 246, 0.3);
+}
+
+.esa-facility-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.esa-facility-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(5, 158, 246, 0.1);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esa-facility-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.esa-facility-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.esa-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--secondary-color);
+  box-shadow: 0 10px 30px rgba(4, 55, 129, 0.04);
+  transition: all 0.35s ease;
+}
+
+.esa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(5, 158, 246, 0.12);
+  border-color: rgba(5, 158, 246, 0.35);
+  border-top-color: var(--primary-color);
+}
+
+.esa-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(5, 158, 246, 0.1);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.esa-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.esa-card-desc {
+  font-size: 0.98rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+/* Process Timeline Step Cards */
+.esa-process-grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.esa-process-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+}
+
+.esa-process-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.esa-process-card:last-child {
+  grid-column: 1 / -1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Our Audit Process — Background Image Section */
+.esa-process-section {
+  position: relative;
+  background-image: url('/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.esa-process-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 34, 82, 0.55);
+  z-index: 0;
+}
+
+.esa-process-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.esa-process-section .esa-section-tag {
+  color: #ffffff;
+}
+
+.esa-process-section .esa-section-title {
+  color: #ffffff;
+}
+
+/* FAQ Accordion */
+.esa-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.esa-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.esa-faq-question {
+  width: 100%;
+  padding: 1.35rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.esa-faq-answer {
+  padding: 0 1.5rem 1.35rem;
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.65;
+}
+
+/* Final Call to Action */
+.esa-final-cta {
+  position: relative;
+  background: transparent;
+  padding: 5rem 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  overflow: hidden;
+}
+
+.esa-final-cta::before {
+  display: none;
+}
+
+.esa-final-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.esa-final-cta .esa-section-tag {
+  color: var(--secondary-color);
+}
+
+.esa-final-cta-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.esa-final-cta-desc {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.esa-final-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.esa-final-cta .esa-btn-secondary {
+  background: #ffffff;
+  color: var(--primary-color);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(4, 55, 129, 0.08);
+}
+
+.esa-final-cta .esa-btn-secondary:hover {
+  background: #f1f5f9;
+  border-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.esa-final-cta-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.esa-final-cta-email svg {
+  color: var(--secondary-color);
+}
+
+.esa-final-cta-email a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.esa-final-cta-email a:hover {
+  text-decoration: underline;
+}
+
+.esa-final-cta-note {
+  font-size: 0.95rem;
+  color: #64748b;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .esa-hero {
+    padding: 4.5rem 1.25rem 5.5rem;
+  }
+  .esa-hero-grid,
+  .esa-why-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .esa-hero-title {
+    font-size: 2rem;
+  }
+  .esa-hero-desc {
+    font-size: 1.02rem;
+  }
+  .esa-why-checks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .esa-facility-card:last-child:nth-child(odd) {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .esa-hero {
+    padding: 2.75rem 1rem 4.5rem;
+    background-image: linear-gradient(165deg, #021437 0%, #043481 55%, #02102e 100%);
+  }
+  .esa-hero::before {
+    background: rgba(0, 0, 0, 0.35);
+  }
+  .esa-eyebrow {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+  }
+  .esa-hero-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .esa-hero-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .esa-hero-ctas {
+    gap: 0.75rem;
+  }
+  .esa-hero-highlights {
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  .esa-hero-grid {
+    gap: 2rem;
+  }
+  .esa-form-card {
+    padding: 1.4rem;
+    border-radius: 20px;
+  }
+  .esa-form-title {
+    font-size: 1.3rem;
+  }
+  .esa-form-subtitle {
+    font-size: 0.88rem;
+  }
+  .esa-form-submit-btn {
+    font-size: 1rem;
+  }
+  .esa-why-title {
+    font-size: 1.85rem;
+  }
+  .esa-why-checks {
+    grid-template-columns: 1fr;
+  }
+  .esa-final-cta-title {
+    font-size: 2rem;
+  }
+  .esa-final-cta-btns {
+    flex-direction: column;
+  }
+  .esa-final-cta-btns .esa-btn-primary,
+  .esa-final-cta-btns .esa-btn-secondary,
+  .esa-final-cta-btns .esa-btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+  .esa-form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .esa-hero-ctas {
+    flex-direction: column;
+  }
+  .esa-btn-primary,
+  .esa-btn-secondary,
+  .esa-btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}
