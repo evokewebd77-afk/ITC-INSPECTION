@@ -21,12 +21,6 @@ import {
   Award,
   Globe,
   Loader2,
-  Factory,
-  Hospital,
-  GraduationCap,
-  Hotel,
-  Home,
-  Server,
   Mail
 } from 'lucide-react';
 import { sendFormToGoogleSheet } from '../utils/submitForm';
@@ -42,6 +36,9 @@ const WhatsAppIcon = () => (
 export const ElectricalSafetyAuditPage: React.FC = () => {
   const [waUrl, setWaUrl] = useState('https://wa.me/919056544487');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showAllServices, setShowAllServices] = useState(false);
+  const [showStandardsCompliance, setShowStandardsCompliance] = useState(false);
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -67,7 +64,9 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
   }, []);
 
   const scrollToEnquiryForm = () => {
-    const el = document.getElementById('enquiry-form');
+    const el =
+      document.getElementById('enquiry-form') ||
+      document.getElementById('enquiry-form-mobile');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -157,10 +156,6 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
     {
       q: 'How much does an electrical safety inspection cost?',
       a: 'Electrical safety audit charges vary according to the site, system complexity, facility size, testing requirements and reporting scope. Contact us for a customised quotation.'
-    },
-    {
-      q: 'Do you provide electrical safety audits near my location?',
-      a: 'ITC India can arrange electrical audit services across India, subject to project location and team availability. Share your site address or city so that the appropriate arrangement can be discussed.'
     }
   ];
 
@@ -220,7 +215,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
           </div>
 
           {/* Right Hero Form */}
-          <div id="enquiry-form" className="esa-form-card">
+          <div id="enquiry-form" className="esa-form-card esa-hero-form">
             <h3 className="esa-form-title">Request an Electrical Safety Audit</h3>
             <p className="esa-form-subtitle">
               Tell us about your site, and our team will contact you to discuss the audit scope and quotation.
@@ -389,45 +384,6 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
         </div>
       </div>
 
-      {/* WHY AUDIT MATTERS SECTION */}
-      <section className="esa-section esa-section-white esa-why-section">
-        <div className="esa-why-body">
-          <div className="esa-why-head">
-            <span className="esa-section-tag">Why an Electrical Safety Audit Matters</span>
-            <h2 className="esa-why-title">Is Your Electrical System as Safe as It Appears?</h2>
-            <p className="esa-why-desc">
-              Electrical risks are not always visible. Loose connections, overloaded circuits and ineffective earthing can remain unnoticed until an incident occurs. A structured audit helps your organisation:
-            </p>
-          </div>
-
-          <div className="esa-why-checks">
-            {[
-              'Identify fire & shock hazards',
-              'Detect overheating components',
-              'Evaluate installation condition',
-              'Review earthing & protection',
-              'Find maintenance gaps',
-              'Prioritise corrective actions',
-              'Strengthen workplace safety',
-              'Improve system reliability',
-              'Support compliance requirements'
-            ].map((point, idx) => (
-              <div key={idx} className="esa-why-check-item">
-                <Check size={16} style={{ color: '#10b981', flexShrink: 0 }} />
-                <span>{point}</span>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-            <button onClick={scrollToEnquiryForm} className="esa-btn-primary">
-              <span>Schedule an Assessment</span>
-              <ChevronDown size={18} />
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* SERVICE OVERVIEW */}
       <section className="esa-section esa-service-overview">
         <div className="esa-section-header">
@@ -486,12 +442,28 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               desc: 'Review of available single-line diagrams, maintenance records, inspection reports, test records, equipment schedules and previous corrective actions.'
             }
           ].map((card, idx) => (
-            <div key={idx} className="esa-card">
+            <div
+              key={idx}
+              className={`esa-card${idx >= 4 ? (showAllServices ? ' esa-card-shown' : ' esa-card-collapsed') : ''}`}
+            >
               <div className="esa-card-icon">{card.icon}</div>
               <h3 className="esa-card-title">{card.title}</h3>
               <p className="esa-card-desc">{card.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="esa-view-all">
+          <button
+            className="esa-view-all-btn"
+            onClick={() => setShowAllServices(v => !v)}
+          >
+            <span>{showAllServices ? 'Show Less' : 'View All Services'}</span>
+            <ChevronDown
+              size={18}
+              style={{ transition: 'transform 0.3s ease', transform: showAllServices ? 'rotate(180deg)' : 'rotate(0deg)' }}
+            />
+          </button>
         </div>
       </section>
 
@@ -508,50 +480,46 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
         <div className="esa-facility-grid">
           {[
             {
-              icon: <Factory size={28} />,
               emoji: '🏭',
               title: 'Industrial & Manufacturing',
               desc: 'Factories, production units, warehouses, workshops and industrial plants.'
             },
             {
-              icon: <Building2 size={28} />,
               emoji: '🏢',
               title: 'Commercial & Offices',
               desc: 'Offices, corporate buildings, business parks and commercial properties.'
             },
             {
-              icon: <Hospital size={28} />,
               emoji: '🏥',
               title: 'Hospitals & Healthcare',
               desc: 'Healthcare premises, including critical and backup electrical systems.'
             },
             {
-              icon: <GraduationCap size={28} />,
               emoji: '🎓',
               title: 'Schools & Education',
               desc: 'Schools, colleges, universities, laboratories and training facilities.'
             },
             {
-              icon: <Hotel size={28} />,
               emoji: '🏨',
               title: 'Hotels & Hospitality',
               desc: 'Guest areas, kitchens, plant rooms, utility spaces and operational facilities.'
             },
             {
-              icon: <Home size={28} />,
               emoji: '🏘️',
               title: 'Residential Societies',
               desc: 'Common electrical infrastructure, panels, pumps, backup power and shared services.'
             },
             {
-              icon: <Server size={28} />,
               emoji: '🖥️',
               title: 'Data Centres & Critical',
               desc: 'Power distribution, backup supplies and reliability for critical infrastructure.'
             }
           ].map((fac, idx) => (
-            <div key={idx} className="esa-facility-card">
-              <div className="esa-facility-icon">{fac.icon}</div>
+            <div
+              key={idx}
+              className={`esa-facility-card${idx === 6 ? ' esa-facility-hidden-mobile' : ''}`}
+            >
+              <div className="esa-facility-logo">{fac.emoji}</div>
               <div className="esa-facility-info">
                 <h3 className="esa-facility-title">{fac.title}</h3>
                 <p className="esa-facility-desc">{fac.desc}</p>
@@ -622,15 +590,57 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
         </div>
       </section>
 
+      {/* WHY AUDIT MATTERS SECTION */}
+      <section className="esa-section esa-section-white esa-why-section">
+        <div className="esa-why-body">
+          <div className="esa-why-head">
+            <span className="esa-section-tag">Why an Electrical Safety Audit Matters</span>
+            <h2 className="esa-why-title">Is Your Electrical System as Safe as It Appears?</h2>
+            <p className="esa-why-desc">
+              Electrical risks are not always visible. Loose connections, overloaded circuits and ineffective earthing can remain unnoticed until an incident occurs. A structured audit helps your organisation:
+            </p>
+          </div>
+
+          <div className="esa-why-checks">
+            {[
+              'Identify fire & shock hazards',
+              'Detect overheating components',
+              'Evaluate installation condition',
+              'Review earthing & protection',
+              'Find maintenance gaps',
+              'Prioritise corrective actions',
+              'Strengthen workplace safety',
+              'Improve system reliability',
+              'Support compliance requirements'
+            ].map((point, idx) => (
+              <div
+                key={idx}
+                className={`esa-why-check-item${idx === 8 ? ' esa-why-check-hidden-mobile' : ''}`}
+              >
+                <Check size={16} style={{ color: '#10b981', flexShrink: 0 }} />
+                <span>{point}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+            <button onClick={scrollToEnquiryForm} className="esa-btn-primary">
+              <span>Schedule an Assessment</span>
+              <ChevronDown size={18} />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* WHAT YOU RECEIVE */}
-      <section className="esa-section esa-section-white">
+      <section className="esa-section esa-section-white esa-deliverables-section">
         <div className="esa-section-header">
           <span className="esa-section-tag">Deliverables</span>
           <h2 className="esa-section-title">Practical Findings Your Team Can Act On</h2>
           <p className="esa-section-subtitle">Your electrical safety audit report may include comprehensive, actionable insight:</p>
         </div>
 
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+        <div className="esa-deliverables-grid">
           {[
             'Executive summary',
             'Audit scope and methodology',
@@ -645,14 +655,14 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
             'Opportunities for preventive maintenance',
             'Conclusion and next steps'
           ].map((deliv, idx) => (
-            <div key={idx} style={{ background: '#f8fafc', padding: '1.1rem 1.35rem', borderRadius: '14px', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <CheckCircle size={20} style={{ color: 'var(--secondary-color)', flexShrink: 0 }} />
-              <span style={{ fontWeight: 600, color: '#334155', fontSize: '0.98rem' }}>{deliv}</span>
+            <div key={idx} className="esa-deliverable-item">
+              <CheckCircle size={20} className="esa-deliverable-icon" />
+              <span>{deliv}</span>
             </div>
           ))}
         </div>
 
-        <p style={{ textAlign: 'center', color: '#94a3b8', fontSize: '0.88rem', marginTop: '2rem' }}>
+        <p className="esa-deliverables-note">
           * The exact report contents depend on the facility, agreed scope and tests performed.
         </p>
       </section>
@@ -663,7 +673,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
           <div>
             <span className="esa-section-tag">Third-Party Electrical Safety Audit</span>
             <h2 className="esa-section-title">Independent Electrical Safety Inspection</h2>
-            <p style={{ fontSize: '1.05rem', color: '#e2e8f0', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               A third-party electrical safety audit provides an objective review of your electrical installations by an external inspection team. It can be useful when:
             </p>
 
@@ -685,14 +695,25 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               ))}
             </div>
 
-            <button onClick={scrollToEnquiryForm} className="esa-btn-primary" style={{ marginTop: '1rem' }}>
-              <span>Arrange a Third-Party Electrical Audit</span>
-              <ChevronDown size={18} />
-            </button>
+<button onClick={scrollToEnquiryForm} className="esa-btn-primary esa-arrange-desktop-only">
+                <span>Arrange a Third-Party Electrical Audit</span>
+                <ChevronDown size={18} />
+              </button>
+
+              <button
+                onClick={() => setShowStandardsCompliance(v => !v)}
+                className="esa-btn-primary esa-view-standards-mobile-only"
+              >
+                <span>{showStandardsCompliance ? 'Hide Standards and Compliance' : 'View Standards and Compliance'}</span>
+                <ChevronDown size={18} />
+              </button>
           </div>
 
           {/* Standards & Compliance Box */}
-          <div style={{ background: '#ffffff', padding: '2.5rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}>
+          <div
+            className={`esa-standards-box${showStandardsCompliance ? ' esa-standards-box-open' : ''}`}
+            style={{ background: '#ffffff', padding: '2.5rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}
+          >
             <span className="esa-section-tag">Standards and Compliance</span>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary-color)', marginBottom: '1rem' }}>
               Audits Aligned with Applicable Requirements
@@ -725,7 +746,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
       </section>
 
       {/* WHY CHOOSE ITC INDIA */}
-      <section className="esa-section esa-section-white">
+      <section className="esa-section esa-section-white esa-why-choose-section">
         <div className="esa-section-header">
           <span className="esa-section-tag">Why Choose ITC India?</span>
           <h2 className="esa-section-title">Professional Electrical Inspection Support</h2>
@@ -798,7 +819,10 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               'Availability of drawings and records',
               'Reporting requirements'
             ].map((factor, idx) => (
-              <div key={idx} className="esa-pricing-factor">
+              <div
+                key={idx}
+                className={`esa-pricing-factor${idx === 8 ? ' esa-pricing-factor-hidden-mobile' : ''}`}
+              >
                 <div className="esa-pricing-factor-icon">
                   <CheckCircle size={18} />
                 </div>
@@ -825,7 +849,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
       </section>
 
       {/* FAQS SECTION */}
-      <section className="esa-section esa-section-white">
+      <section className="esa-section esa-section-white esa-faq-section">
         <div className="esa-section-header">
           <span className="esa-section-tag">Got Questions?</span>
           <h2 className="esa-section-title">Electrical Safety Audit FAQs</h2>
@@ -833,7 +857,10 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
 
         <div className="esa-faq-container">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="esa-faq-item">
+            <div
+              key={idx}
+              className={`esa-faq-item${idx >= 3 ? (showAllFaqs ? ' esa-faq-item-shown' : ' esa-faq-item-collapsed') : ''}`}
+            >
               <button 
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                 className="esa-faq-question"
@@ -857,22 +884,157 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
             </div>
           ))}
         </div>
-      </section>
 
-      {/* FINAL CALL TO ACTION */}
+        <div className="esa-view-all-faqs">
+          <button
+            onClick={() => setShowAllFaqs(prev => !prev)}
+            className="esa-view-all-faqs-btn"
+          >
+            {showAllFaqs ? 'Show Less' : 'View All FAQs'}
+            <ChevronDown
+              size={18}
+              style={{
+                transform: showAllFaqs ? 'rotate(180deg)' : 'rotate(0deg)',
+                transition: 'transform 0.3s ease',
+                flexShrink: 0
+              }}
+            />
+          </button>
+        </div>
+      </section>
       <section className="esa-final-cta">
         <div className="esa-final-cta-inner">
-          <h2 className="esa-final-cta-title">Protect Your People, Property and Operations</h2>
+          <h2 className="esa-final-cta-title">Protect Your People, Property and<br />Operations</h2>
           <p className="esa-final-cta-desc">
             Do not wait for overheating, equipment failure or an electrical incident to reveal weaknesses in your electrical system.
+            <br />
             Arrange a professional electrical safety audit and receive a clear, risk-based assessment of your facility.
           </p>
+            {/* Mobile Form inside Final CTA */}
+            <div id="enquiry-form-mobile" className="esa-form-card esa-cta-form">
+              <h3 className="esa-form-title">Request an Electrical Safety Audit</h3>
+              <p className="esa-form-subtitle">
+                Tell us about your site, and our team will contact you to discuss the audit scope and quotation.
+              </p>
+
+              {submitted ? (
+                <div style={{ textAlign: 'center', padding: '2.5rem 1rem' }}>
+                  <div style={{ width: '60px', height: '60px', background: '#dcfce7', color: '#166534', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
+                    <CheckCircle size={32} />
+                  </div>
+                  <h4 style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Quotation Request Received!</h4>
+                  <p style={{ color: '#475569', fontSize: '0.98rem', lineHeight: 1.6 }}>
+                    Thank you for reaching out. Our electrical safety engineering team will review your site requirements and contact you promptly.
+                  </p>
+                  <button 
+                    onClick={() => setSubmitted(false)}
+                    style={{ marginTop: '1.5rem', background: 'none', border: 'none', color: 'var(--secondary-color)', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline' }}
+                  >
+                    Submit Another Request
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleFormSubmit}>
+                  <div className="esa-form-grid-2">
+                    <div className="esa-form-group">
+                      <label>Full Name *</label>
+                      <input 
+                        type="text" 
+                        name="fullName" 
+                        required 
+                        value={formData.fullName} 
+                        onChange={handleFormChange}
+                        placeholder="e.g. Rahul Sharma" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                    <div className="esa-form-group">
+                      <label>Company / Organisation</label>
+                      <input 
+                        type="text" 
+                        name="company" 
+                        value={formData.company} 
+                        onChange={handleFormChange}
+                        placeholder="e.g. Acme Industries Ltd" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="esa-form-grid-2">
+                    <div className="esa-form-group">
+                      <label>Phone Number *</label>
+                      <input 
+                        type="tel" 
+                        name="phone" 
+                        required 
+                        value={formData.phone} 
+                        onChange={handleFormChange}
+                        placeholder="+91 98765 43210" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                    <div className="esa-form-group">
+                      <label>Email Address *</label>
+                      <input 
+                        type="email" 
+                        name="email" 
+                        required 
+                        value={formData.email} 
+                        onChange={handleFormChange}
+                        placeholder="name@company.com" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="esa-form-grid-2">
+                    <div className="esa-form-group">
+                      <label>Site Location (City/State) *</label>
+                      <input 
+                        type="text" 
+                        name="siteLocation" 
+                        required 
+                        value={formData.siteLocation} 
+                        onChange={handleFormChange}
+                        placeholder="e.g. Mumbai, Maharashtra" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                    <div className="esa-form-group">
+                      <label>Facility Type</label>
+                      <input 
+                        type="text" 
+                        name="facilityType" 
+                        value={formData.facilityType} 
+                        onChange={handleFormChange}
+                        placeholder="e.g. Manufacturing Plant" 
+                        className="esa-form-input" 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="esa-form-group">
+                    <label>Message / Additional Details</label>
+                    <textarea 
+                      name="message" 
+                      value={formData.message} 
+                      onChange={handleFormChange}
+                      placeholder="Any specific concerns or requirements..."
+                      rows={4}
+                      className="esa-form-input"
+                    />
+                  </div>
+
+                  <button type="submit" className="esa-btn-primary" disabled={loading}>
+                    {loading ? 'Submitting...' : 'Submit Request'}
+                  </button>
+                </form>
+              )}
+            </div>
 
           <div className="esa-final-cta-btns">
-            <button onClick={scrollToEnquiryForm} className="esa-btn-primary">
-              <span>Request an Electrical Safety Audit</span>
-              <ChevronDown size={18} />
-            </button>
+
             <a href="tel:+919316012883" onClick={() => trackClickEvent('phone', 'ESA Final CTA Call')} className="esa-btn-secondary">
               <Phone size={18} />
               <span>Call +91 93160 12883</span>
