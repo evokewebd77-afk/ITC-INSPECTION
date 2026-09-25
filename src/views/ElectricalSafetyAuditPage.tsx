@@ -58,7 +58,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
     setWaUrl(
       getWhatsAppTrackedUrl(
         '919056544487',
-        'Hello ITC Inspection Team! Thank you for contacting. I am interested in an Electrical Safety Audit for my facility.'
+        'Hello ITC Inspection Team! I am interested in an Electrical Safety Audit for my facility.'
       )
     );
   }, []);
