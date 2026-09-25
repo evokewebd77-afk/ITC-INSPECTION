@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { 
   Flame, Zap, Settings, Sun, 
   ShieldAlert, Camera, Building, 
@@ -1985,6 +1986,29 @@ export const servicesData = [
       complianceAndCertification: 'Deliverables include detailed inspection reports with photographic evidence, comprehensive assessments, nonconformity register with risk ratings, compliance certificates where applicable, recommendations for corrective actions, and support for regulatory submissions and authority approvals.'
     }
   }
+];
+
+export const electricalSafetyAuditCard = {
+  id: 'electrical-safety-audit',
+  icon: <Zap size={32} strokeWidth={1.5} />,
+  title: 'Electrical Safety Audit',
+  desc: 'Comprehensive electrical safety inspections and audits for industrial and commercial facilities, covering infrastructure, protection systems, earthing, and documentation.',
+  img: '/ee.png',
+  link: '/electrical-safety-audit',
+};
+
+type MainServiceCard = {
+  id: string;
+  icon: ReactElement;
+  title: string;
+  desc: string;
+  img: string;
+  link?: string;
+};
+
+export const getMainServiceCards = (): MainServiceCard[] => [
+  electricalSafetyAuditCard,
+  ...servicesData.filter(s => mainServiceIds.includes(s.id)),
 ];
 
 export const mainServiceIds = [

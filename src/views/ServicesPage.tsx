@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Search, Activity, BarChart, CheckCircle } from 'lucide-react';
-import { servicesData, mainServiceIds } from '../data/services';
+import { getMainServiceCards } from '../data/services';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import '../sections/Services.css';
 
@@ -16,7 +16,7 @@ export const ServicesPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const mainServices = servicesData.filter(s => mainServiceIds.includes(s.id));
+  const mainServices = getMainServiceCards();
 
   return (
     <main style={{ paddingTop: '80px', backgroundColor: 'var(--bg-main)', minHeight: '100vh' }}>
@@ -79,7 +79,7 @@ export const ServicesPage: React.FC = () => {
           
           <div className={`services-grid reveal-hidden ${isVisible ? 'reveal-visible' : ''}`}>
             {mainServices.map((service, index) => (
-              <Link href={`/services/${service.id}`} className="premium-service-card" key={index}>
+              <Link href={service.link ?? `/services/${service.id}`} className="premium-service-card" key={index}>
                 <div className="premium-image-wrapper">
                   <Image
                     src={service.img}

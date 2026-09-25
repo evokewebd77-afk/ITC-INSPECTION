@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { servicesData, mainServiceIds } from '../data/services';
+import { getMainServiceCards } from '../data/services';
 import './Services.css';
 
 export const Services: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver();
   const [showAllMobile, setShowAllMobile] = useState(false);
-  const mainServices = servicesData.filter(s => mainServiceIds.includes(s.id));
+  const mainServices = getMainServiceCards();
 
   return (
     <section id="services" className="section services-section">
@@ -28,7 +28,7 @@ export const Services: React.FC = () => {
             const isHiddenOnMobile = !showAllMobile && index >= 4;
             return (
               <Link 
-                href={`/services/${service.id}`} 
+                href={service.link ?? `/services/${service.id}`} 
                 className={`premium-service-card ${isHiddenOnMobile ? 'mobile-hidden' : ''}`} 
                 key={index}
               >
