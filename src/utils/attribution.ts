@@ -3,6 +3,8 @@
  * Automatically captures GCLID (Google Click ID), FBCLID, UTM Parameters, Referrer, and Landing Page
  */
 
+import { APPS_SCRIPT_URL } from './appsScript';
+
 export interface LeadAttributionData {
   gclid?: string;
   fbclid?: string;
@@ -146,5 +148,74 @@ export const trackClickEvent = (type: 'whatsapp' | 'phone' | 'email', label?: st
       utm_source: attribution.utm_source || '',
       utm_campaign: attribution.utm_campaign || '',
     });
+  }
+
+  // 3. Email notification via Apps Script
+  sendContactClickNotification(type, label || type);
+};
+
+export type ContactClickType = 'whatsapp' | 'phone' | 'email';
+
+const CONTACT_CLICK_MIN_INTERVAL_MS = 3000;
+let lastContactClick: { key: string; at: number } | null = null;
+
+const sendContactClickNotification = (type: ContactClickType, buttonName: string): void => {
+  if (typeof window === 'undefined') return;
+
+  // Suppress accidental double-taps without hiding genuine repeat clicks.
+  const key = `${type}:${buttonName}`;
+  const now = Date.now();
+  if (lastContactClick && lastContactClick.key === key && now - lastContactClick.at < CONTACT_CLICK_MIN_INTERVAL_MS) {
+    return;
+  }
+  lastContactClick = { key, at: now };
+
+  const attribution = getLeadAttribution();
+
+  const fields: Record<string, string> = {
+    eventType: 'contact_click',
+    clickType: type,
+    buttonName: buttonName,
+    source: window.location.href,
+    pagePath: window.location.pathname,
+    referrer: attribution.referrer || '',
+    landingPage: attribution.landingPage || '',
+    gclid: attribution.gclid || '',
+    fbclid: attribution.fbclid || '',
+    utm_source: attribution.utm_source || '',
+    utm_medium: attribution.utm_medium || '',
+    utm_campaign: attribution.utm_campaign || '',
+    utm_term: attribution.utm_term || '',
+    utm_content: attribution.utm_content || '',
+    clickedAt: new Date().toISOString(),
+  };
+
+  const query = new URLSearchParams(fields).toString();
+
+  // sendBeacon survives the immediate unload caused by tel: links and new-tab
+  // navigation. text/plain is CORS-safelisted, so no preflight is required.
+  if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
+    try {
+      const blob = new Blob([JSON.stringify(fields)], { type: 'text/plain;charset=UTF-8' });
+      if (navigator.sendBeacon(APPS_SCRIPT_URL, blob)) return;
+    } catch (e) {
+      // fall through to fetch
+    }
+  }
+
+  // keepalive also outlives unload
+  try {
+    fetch(`${APPS_SCRIPT_URL}?${query}`, { method: 'GET', mode: 'no-cors', keepalive: true }).catch(() => {});
+    return;
+  } catch (e) {
+    // fall through to image pixel
+  }
+
+  // Last resort: image pixel GET
+  try {
+    const img = new Image();
+    img.src = `${APPS_SCRIPT_URL}?${query}`;
+  } catch (e) {
+    // give up silently - never block the user's click
   }
 };

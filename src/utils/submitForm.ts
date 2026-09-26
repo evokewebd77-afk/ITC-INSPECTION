@@ -1,6 +1,7 @@
 import { getLeadAttribution, trackFormSubmissionEvent } from './attribution';
+import { APPS_SCRIPT_URL } from './appsScript';
 
-export const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXkQezj575daIWHxk-3_Ve6cf1C6fHHX6BWwDYT5trLAwirjBXpBKJAlAQW-UqJBJ_Tg/exec';
+export { APPS_SCRIPT_URL };
 
 export interface FormDataPayload {
   fullName?: string;
