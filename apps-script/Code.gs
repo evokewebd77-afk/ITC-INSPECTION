@@ -127,9 +127,11 @@ function handleContactClick_(data) {
     : String(clickType).toUpperCase();
 
   var buttonName = data.buttonName || '(unlabelled)';
-  var subject = EMAIL_SUBJECT_PREFIX + ' ' + typeLabel + ' click - ' + buttonName;
+  var serviceLabel = serviceLabel_(data);
+  var subject = EMAIL_SUBJECT_PREFIX + ' ' + serviceLabel + ' - ' + typeLabel + ' click - ' + buttonName;
 
   var rows = [
+    ['Service', serviceLabel],
     ['Button', buttonName],
     ['Action', typeLabel],
     ['Source (page)', data.source || data.pagePath || ''],
@@ -154,6 +156,45 @@ function safeFormatIst_(iso) {
     console.error('formatIst_ failed', err);
     return iso ? String(iso) : '';
   }
+}
+
+/**
+ * Derives a human-readable service name from the page the click happened on, so
+ * the alert subject identifies the service without the client having to send it.
+ *   /electrical-safety-audit      -> Electrical Safety Audit
+ *   /services/fire-safety-audit   -> Fire Safety Audit
+ *   /contact                      -> Contact
+ */
+function serviceLabel_(data) {
+  var raw = data.pagePath || '';
+
+  if (!raw && data.source) {
+    try {
+      raw = new URL(data.source).pathname;
+    } catch (err) {
+      raw = '';
+    }
+  }
+
+  raw = String(raw).split('?')[0].split('#')[0];
+  var segments = raw.split('/').filter(Boolean);
+  if (!segments.length) return 'Home';
+
+  return titleCaseSlug_(segments[segments.length - 1]);
+}
+
+function titleCaseSlug_(slug) {
+  var words = String(slug)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+    .map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    });
+
+  return words.length ? words.join(' ') : 'Website';
 }
 
 /** Appends attribution rows only when the value is actually present. */
