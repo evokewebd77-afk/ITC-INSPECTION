@@ -133,12 +133,27 @@ function handleContactClick_(data) {
     ['Button', buttonName],
     ['Action', typeLabel],
     ['Source (page)', data.source || data.pagePath || ''],
-    ['Clicked at (IST)', formatIst_(data.clickedAt)]
+    ['Clicked at (IST)', safeFormatIst_(data.clickedAt)]
   ];
 
-  appendAttributionRows_(rows, data);
+  // A bad attribution value must never stop the alert from being sent.
+  try {
+    appendAttributionRows_(rows, data);
+  } catch (err) {
+    console.error('attribution row build failed', err);
+  }
 
   sendMail_(subject, buildClickHtml_(typeLabel, buttonName, rows), buildClickText_(typeLabel, buttonName, rows));
+}
+
+/** formatIst_ that can never throw - falls back to the raw value. */
+function safeFormatIst_(iso) {
+  try {
+    return formatIst_(iso);
+  } catch (err) {
+    console.error('formatIst_ failed', err);
+    return iso ? String(iso) : '';
+  }
 }
 
 /** Appends attribution rows only when the value is actually present. */
@@ -211,7 +226,7 @@ function handleFormSubmission_(data) {
     ['Facility type', data.facilityType || ''],
     ['Message', data.message || ''],
     ['Form', data.formName || ''],
-    ['Submitted at (IST)', data.submittedAt || formatIst_(new Date().toISOString())]
+    ['Submitted at (IST)', data.submittedAt || safeFormatIst_(new Date().toISOString())]
   ];
 
   appendAttributionRows_(rows, data);
@@ -261,7 +276,10 @@ function formatIst_(iso) {
   if (!iso) return '';
   var d = new Date(iso);
   if (isNaN(d.getTime())) return String(iso);
-  return Utilities.formatDate(d, 'Asia/Kolkata', 'dd MMM yyyy, HH:mm:ss IST');
+  // Every unquoted character in a Utilities.formatDate pattern is treated as a
+  // pattern character, so the zone label is appended rather than embedded -
+  // embedding it makes Apps Script throw "Invalid argument".
+  return Utilities.formatDate(d, 'Asia/Kolkata', 'dd MMM yyyy, HH:mm:ss') + ' IST';
 }
 
 function textResponse_(message) {
