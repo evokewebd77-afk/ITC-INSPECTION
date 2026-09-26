@@ -6,12 +6,15 @@ import {
   ShieldCheck,
   Phone,
   CheckCircle,
-  AlertTriangle,
   FileText,
   Building2,
   Zap,
-  Flame,
   Camera,
+  Cable,
+  ToggleRight,
+  Gauge,
+  BatteryCharging,
+  CloudLightning,
   BarChart3,
   Clock,
   Send,
@@ -412,46 +415,55 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
           {[
             {
               icon: <Zap size={24} />,
+              tone: 'amber',
               title: 'Electrical Panels and Distribution Boards',
               desc: 'Inspection of main panels, sub-distribution boards, switchgear, circuit protection, panel condition, accessibility, labelling and visible signs of deterioration.'
             },
             {
-              icon: <FileText size={24} />,
+              icon: <Cable size={24} />,
+              tone: 'cyan',
               title: 'Wiring and Cable Systems',
               desc: 'Assessment of visible cables, wiring routes, termination points, cable loading, physical condition and protection against mechanical or environmental damage.'
             },
             {
               icon: <ShieldCheck size={24} />,
+              tone: 'emerald',
               title: 'Earthing and Bonding Systems',
               desc: 'Review of earthing arrangements, continuity, connections and earth-resistance measurements where included in the agreed scope.'
             },
             {
-              icon: <AlertTriangle size={24} />,
+              icon: <ToggleRight size={24} />,
+              tone: 'rose',
               title: 'Protective Devices',
               desc: 'Assessment of MCBs, MCCBs, RCCBs, relays, fuses and other protective devices for condition, application and coordination concerns.'
             },
             {
               icon: <Camera size={24} />,
+              tone: 'orange',
               title: 'Thermal Imaging',
               desc: 'Thermal scanning of accessible electrical panels and connections, where required, to identify abnormal heating, loose connections, imbalance and overloaded components.'
             },
             {
-              icon: <BarChart3 size={24} />,
+              icon: <Gauge size={24} />,
+              tone: 'violet',
               title: 'Insulation and Electrical Testing',
               desc: 'Insulation-resistance and other relevant electrical tests may be performed depending on the installation, accessibility, operational conditions and audit scope.'
             },
             {
-              icon: <Flame size={24} />,
+              icon: <BatteryCharging size={24} />,
+              tone: 'lime',
               title: 'Emergency and Backup Power',
               desc: 'Inspection of generators, UPS systems, emergency electrical supplies and associated distribution arrangements where included.'
             },
             {
-              icon: <ShieldCheck size={24} />,
+              icon: <CloudLightning size={24} />,
+              tone: 'indigo',
               title: 'Lightning Protection',
               desc: 'Review of accessible lightning-protection and earthing arrangements based on the agreed inspection scope.'
             },
             {
               icon: <FileText size={24} />,
+              tone: 'sky',
               title: 'Electrical Documentation',
               desc: 'Review of available single-line diagrams, maintenance records, inspection reports, test records, equipment schedules and previous corrective actions.'
             }
@@ -460,7 +472,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               key={idx}
               className={`esa-card${idx >= 4 ? (showAllServices ? ' esa-card-shown' : ' esa-card-collapsed') : ''}`}
             >
-              <div className="esa-card-icon">{card.icon}</div>
+              <div className={`esa-card-icon esa-card-icon--${card.tone}`}>{card.icon}</div>
               <h3 className="esa-card-title">{card.title}</h3>
               <p className="esa-card-desc">{card.desc}</p>
             </div>
@@ -629,9 +641,9 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
             ].map((point, idx) => (
               <div
                 key={idx}
-                className={`esa-why-check-item${idx === 8 ? ' esa-why-check-hidden-mobile' : ''}`}
+                className="esa-why-check-item"
               >
-                <Check size={16} style={{ color: '#10b981', flexShrink: 0 }} />
+                <Check size={16} style={{ color: '#059669', flexShrink: 0 }} />
                 <span>{point}</span>
               </div>
             ))}
