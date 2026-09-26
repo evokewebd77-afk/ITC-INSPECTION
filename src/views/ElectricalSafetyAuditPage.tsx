@@ -34,7 +34,7 @@ const WhatsAppIcon = () => (
 );
 
 export const ElectricalSafetyAuditPage: React.FC = () => {
-  const [waUrl, setWaUrl] = useState('https://wa.me/919056544487');
+  const [waUrl, setWaUrl] = useState('https://wa.me/919646439768');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showAllServices, setShowAllServices] = useState(false);
   const [showStandardsCompliance, setShowStandardsCompliance] = useState(false);
@@ -57,19 +57,33 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
     window.scrollTo(0, 0);
     setWaUrl(
       getWhatsAppTrackedUrl(
-        '919056544487',
+        '919646439768',
         'Hello ITC Inspection Team! I am interested in an Electrical Safety Audit for my facility.'
       )
     );
   }, []);
 
   const scrollToEnquiryForm = () => {
-    const el =
-      document.getElementById('enquiry-form') ||
-      document.getElementById('enquiry-form-mobile');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    const isVisible = (el: HTMLElement | null): el is HTMLElement => {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.height > 0 || rect.width > 0;
+    };
+
+    const heroForm = document.getElementById('enquiry-form');
+    const mobileForm = document.getElementById('enquiry-form-mobile');
+    const el = [heroForm, mobileForm].find(isVisible);
+
+    if (!el) return;
+
+    const offset = 90;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({ top, behavior: 'smooth' });
+
+    window.setTimeout(() => {
+      el.querySelector<HTMLInputElement>('input, select, textarea')?.focus({ preventScroll: true });
+    }, 600);
   };
 
   const handleFormChange = (
@@ -186,7 +200,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               </button>
 
               <a 
-                href="tel:+919316012883" 
+                href="tel:+919646439768" 
                 onClick={() => trackClickEvent('phone', 'ESA Hero Call')}
                 className="esa-btn-secondary"
               >
@@ -1035,13 +1049,13 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
 
           <div className="esa-final-cta-btns">
 
-            <a href="tel:+919316012883" onClick={() => trackClickEvent('phone', 'ESA Final CTA Call')} className="esa-btn-secondary">
+            <a href="tel:+919646439768" onClick={() => trackClickEvent('phone', 'ESA Final CTA Call')} className="esa-btn-secondary">
               <Phone size={18} />
-              <span>Call +91 93160 12883</span>
+              <span>Call +91 96464 39768</span>
             </a>
             <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackClickEvent('whatsapp', 'ESA Final CTA WhatsApp')} className="esa-btn-whatsapp">
               <WhatsAppIcon />
-              <span>WhatsApp +91 90565 44487</span>
+              <span>WhatsApp +91 96464 39768</span>
             </a>
           </div>
 
