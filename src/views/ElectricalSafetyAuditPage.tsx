@@ -37,7 +37,7 @@ const WhatsAppIcon = () => (
 );
 
 export const ElectricalSafetyAuditPage: React.FC = () => {
-  const [waUrl, setWaUrl] = useState('https://wa.me/919646439768');
+  const [waUrl, setWaUrl] = useState('https://wa.me/919041670146');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showAllServices, setShowAllServices] = useState(false);
   const [showStandardsCompliance, setShowStandardsCompliance] = useState(false);
@@ -60,7 +60,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
     window.scrollTo(0, 0);
     setWaUrl(
       getWhatsAppTrackedUrl(
-        '919646439768',
+        '919041670146',
         'Hello ITC Inspection Team! I am interested in an Electrical Safety Audit for my facility.'
       )
     );
@@ -203,7 +203,7 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
               </button>
 
               <a 
-                href="tel:+919646439768" 
+                href="tel:+919041670146"
                 onClick={() => trackClickEvent('phone', 'ESA Hero Call')}
                 className="esa-btn-secondary"
               >
@@ -1061,13 +1061,13 @@ export const ElectricalSafetyAuditPage: React.FC = () => {
 
           <div className="esa-final-cta-btns">
 
-            <a href="tel:+919646439768" onClick={() => trackClickEvent('phone', 'ESA Final CTA Call')} className="esa-btn-secondary">
+            <a href="tel:+919041670146" onClick={() => trackClickEvent('phone', 'ESA Final CTA Call')} className="esa-btn-secondary">
               <Phone size={18} />
-              <span>Call +91 96464 39768</span>
+              <span>Call +91 90416 70146</span>
             </a>
             <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackClickEvent('whatsapp', 'ESA Final CTA WhatsApp')} className="esa-btn-whatsapp">
               <WhatsAppIcon />
-              <span>WhatsApp +91 96464 39768</span>
+              <span>WhatsApp +91 90416 70146</span>
             </a>
           </div>
 
